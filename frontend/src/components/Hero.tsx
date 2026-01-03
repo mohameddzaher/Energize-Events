@@ -70,7 +70,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-3 sm:mb-4 leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white mb-3 sm:mb-4 leading-tight"
           >
             Elevate Your Events,
             <br />
@@ -83,7 +83,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-sm sm:text-base md:text-lg text-gray-200 mb-6 sm:mb-8 font-light max-w-2xl mx-auto px-4 leading-relaxed"
+            className="text-xs sm:text-sm md:text-base text-gray-200 mb-6 sm:mb-8 font-light max-w-2xl mx-auto px-4 leading-relaxed"
           >
             All-in-one platform to plan, execute, and deliver exceptional events
             — faster and smarter.
