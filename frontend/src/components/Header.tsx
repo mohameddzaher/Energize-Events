@@ -88,7 +88,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-3 py-1.5 rounded-lg transition-all duration-200 text-xs ${
+                    className={`px-3 py-1.5 rounded-md transition-all duration-200 text-[10px] sm:text-[11px] ${
                       active ? "font-bold" : "font-medium"
                     } ${
                       isScrolled
@@ -111,18 +111,14 @@ export default function Header() {
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
-              className={`hidden lg:inline-flex px-4 py-1.5 rounded-lg transition-all duration-300 text-xs font-semibold ${
-                isScrolled
-                  ? "bg-[#DC2626] text-white hover:bg-red-700"
-                  : "bg-[#DC2626] text-white hover:bg-red-700"
-              }`}
+              className="hidden lg:inline-flex px-4 py-1.5 rounded-md transition-all duration-300 text-[10px] sm:text-[11px] font-semibold bg-[#DC2626] text-white hover:bg-red-700 shadow-sm hover:shadow-md"
             >
               Contact
             </Link>
 
             <button
               onClick={() => setIsMenuOpen((v) => !v)}
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
+              className={`lg:hidden p-2 rounded-md transition-colors ${
                 isScrolled
                   ? "text-gray-700 hover:bg-gray-100"
                   : "text-gray-700 hover:bg-gray-100"
@@ -141,7 +137,7 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden rounded-lg mt-2 mb-4 p-4 bg-white border border-gray-200 shadow-lg"
+              className="lg:hidden rounded-md mt-2 mb-4 p-4 bg-white border border-gray-200 shadow-lg"
             >
               <div className="flex flex-col space-y-2">
                 {navItems.map((item) => {
@@ -150,7 +146,7 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`px-4 py-2.5 rounded-lg transition-all duration-200 text-xs text-center ${
+                      className={`px-4 py-2.5 rounded-md transition-all duration-200 text-[10px] sm:text-[11px] text-center ${
                         active ? "font-bold" : "font-medium"
                       } ${
                         active
@@ -168,7 +164,7 @@ export default function Header() {
                   <Link
                     href="/contact"
                     onClick={() => setIsMenuOpen(false)}
-                    className="w-full py-2.5 font-semibold text-xs rounded-lg hover:shadow-lg transition-all duration-300 text-center block bg-[#DC2626] text-white"
+                    className="w-full py-2.5 font-semibold text-[10px] sm:text-[11px] rounded-md hover:shadow-md transition-all duration-300 text-center block bg-[#DC2626] text-white"
                   >
                     Contact
                   </Link>
