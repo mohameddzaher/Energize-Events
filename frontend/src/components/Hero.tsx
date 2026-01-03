@@ -97,7 +97,10 @@ const Hero = () => {
           >
             <Link href="/contact" className="w-full sm:w-auto">
               <motion.button
-                whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(220, 38, 38, 0.4)" }}
+                whileHover={{
+                  scale: 1.03,
+                  boxShadow: "0 10px 25px -5px rgba(220, 38, 38, 0.4)",
+                }}
                 whileTap={{ scale: 0.97 }}
                 className="group relative bg-[#DC2626] text-white px-6 py-3 rounded-full font-semibold text-xs sm:text-sm w-full sm:w-auto hover:bg-red-700 transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
               >

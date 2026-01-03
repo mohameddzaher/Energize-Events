@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Projects from '@/components/Projects';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
-import Link from 'next/link';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Projects from "@/components/Projects";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
+import Link from "next/link";
 
 export default function ProjectsPage() {
   return (
@@ -35,9 +35,7 @@ export default function ProjectsPage() {
               <p className="text-xs sm:text-sm text-gray-300 max-w-2xl mx-auto mb-1">
                 PROJECTS
               </p>
-              <p className="text-xs text-gray-400">
-                (PHOTOS & VIDEOS)
-              </p>
+              <p className="text-xs text-gray-400">(PHOTOS & VIDEOS)</p>
             </div>
           </div>
         </section>
@@ -58,7 +56,8 @@ export default function ProjectsPage() {
                   Ready to Create Your Next Project?
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-600 mb-6 max-w-2xl mx-auto">
-                  Let&apos;s work together to bring your vision to life and create an unforgettable experience.
+                  Let&apos;s work together to bring your vision to life and
+                  create an unforgettable experience.
                 </p>
                 <Link href="/contact">
                   <motion.button
