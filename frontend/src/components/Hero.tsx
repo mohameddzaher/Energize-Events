@@ -22,7 +22,7 @@ const Hero = () => {
           modules={[Autoplay, EffectFade]}
           effect="fade"
           autoplay={{
-            delay: 5000,
+            delay: 4000,
             disableOnInteraction: false,
           }}
           loop={true}
@@ -39,7 +39,7 @@ const Hero = () => {
                   priority={index === 0}
                   loading={index === 0 ? undefined : "lazy"}
                   sizes="100vw"
-                  quality={index === 0 ? 90 : 75}
+                  quality={index === 0 ? 75 : 60}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/80 via-[#0A0A0A]/60 to-[#0A0A0A]/80" />
               </div>
