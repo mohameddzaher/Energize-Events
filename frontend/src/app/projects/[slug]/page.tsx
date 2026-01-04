@@ -13,18 +13,21 @@ import { FiUsers, FiCalendar, FiMapPin, FiAward } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const projectDetails: Record<string, {
-  title: string;
-  category: string;
-  client: string;
-  date: string;
-  location: string;
-  attendees: string;
-  description: string;
-  longDescription: string;
-  achievements: string[];
-  images: string[];
-}> = {
+const projectDetails: Record<
+  string,
+  {
+    title: string;
+    category: string;
+    client: string;
+    date: string;
+    location: string;
+    attendees: string;
+    description: string;
+    longDescription: string;
+    achievements: string[];
+    images: string[];
+  }
+> = {
   "tech-conference-2024": {
     title: "Tech Conference 2024",
     category: "Conference",
