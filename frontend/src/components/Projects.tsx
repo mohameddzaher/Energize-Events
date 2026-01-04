@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import Image from "next/image";
@@ -12,9 +12,19 @@ import "swiper/css/effect-coverflow";
 
 const Projects = () => {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Auto-play video when it becomes visible
+  useEffect(() => {
+    if (videoRef.current && isInView) {
+      videoRef.current.play().catch(() => {
+        // Autoplay was prevented
+      });
+    }
+  }, [isInView]);
 
   const projects = [
     {
@@ -107,6 +117,43 @@ const Projects = () => {
             See how we&apos;ve transformed visions into unforgettable
             experiences
           </p>
+        </motion.div>
+
+        {/* Video Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-6 sm:mb-8 flex justify-center"
+        >
+          <div className="relative rounded-xl overflow-hidden shadow-xl bg-black/50 border border-gray-200 w-full max-w-2xl group cursor-pointer hover:shadow-2xl transition-all duration-300">
+            <div className="relative aspect-video bg-black">
+              <video
+                ref={videoRef}
+                src="/images/Saudia - FamilyDay.mp4"
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                preload="auto"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent pointer-events-none" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/95 to-transparent">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-1.5 h-1.5 bg-[#DC2626] rounded-full animate-pulse" />
+                <span className="text-[#DC2626] font-semibold text-xs">VIDEO</span>
+              </div>
+              <h3 className="text-sm sm:text-base md:text-lg font-bold mb-0.5 text-white">
+                Saudia Family Day
+              </h3>
+              <p className="text-gray-300 text-xs">
+                Creating unforgettable family experiences
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         <div className="mb-6 sm:mb-8">
