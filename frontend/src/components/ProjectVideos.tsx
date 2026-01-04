@@ -3,24 +3,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, EffectCoverflow } from "swiper/modules";
 import { FiPlay, FiVideo } from "react-icons/fi";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-coverflow";
 
 const ProjectVideos = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [playingVideo, setPlayingVideo] = useState<number | null>(0);
-
-  // Auto-play the first video when component mounts
-  useEffect(() => {
-    setPlayingVideo(0);
-  }, []);
+  const [selectedVideo, setSelectedVideo] = useState(0);
 
   const videos = [
     {
@@ -76,109 +65,36 @@ const ProjectVideos = () => {
           </p>
         </motion.div>
 
-        {/* Video Carousel */}
-        <div className="mb-8">
-          <Swiper
-            modules={[Autoplay, Navigation, EffectCoverflow]}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView="auto"
-            coverflowEffect={{
-              rotate: 20,
-              stretch: 0,
-              depth: 150,
-              modifier: 1.5,
-              slideShadows: true,
-            }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            navigation={true}
-            loop={true}
-            onSlideChange={(swiper) => {
-              setActiveIndex(swiper.realIndex);
-              setPlayingVideo(swiper.realIndex);
-            }}
-            className="video-swiper"
-            breakpoints={{
-              640: {
-                slidesPerView: 1.2,
-              },
-              768: {
-                slidesPerView: 1.5,
-              },
-              1024: {
-                slidesPerView: 2,
-              },
-            }}
-          >
-            {videos.map((video, index) => {
-              const isActive = index === activeIndex;
-              return (
-                <SwiperSlide
-                  key={video.id}
-                  className="!w-[90%] md:!w-[70%] lg:!w-[60%]"
-                >
-                  <motion.div
-                    animate={{
-                      scale: isActive ? 1 : 0.9,
-                      opacity: isActive ? 1 : 0.7,
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="relative rounded-xl overflow-hidden shadow-2xl group"
-                  >
-                    <div className="relative aspect-video bg-black/50">
-                      {isActive && playingVideo === index ? (
-                        <iframe
-                          src={`${video.embedUrl}?autoplay=1&mute=1`}
-                          className="w-full h-full"
-                          allow="autoplay; encrypted-media; fullscreen"
-                          allowFullScreen
-                          title={video.title}
-                        />
-                      ) : (
-                        <>
-                          <Image
-                            src={video.thumbnailUrl}
-                            alt={video.title}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 60vw"
-                          />
-                          {!isActive && (
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/20 to-black/60 flex items-center justify-center">
-                              <div className="text-center">
-                                <motion.div
-                                  whileHover={{ scale: 1.1 }}
-                                  className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#DC2626] flex items-center justify-center shadow-2xl group-hover:bg-red-700 transition-colors mb-3"
-                                >
-                                  <FiPlay className="w-6 h-6 md:w-8 md:h-8 text-white ml-1" />
-                                </motion.div>
-                              </div>
-                            </div>
-                          )}
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-transparent to-transparent" />
-                        </>
-                      )}
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-gradient-to-t from-[#0A0A0A] to-transparent">
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-white">
-                        {video.title}
-                      </h3>
-                      <p className="text-gray-300 text-xs sm:text-sm">
-                        {video.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
+        {/* Main Video Player */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-8 sm:mb-10 max-w-5xl mx-auto"
+        >
+          <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black/50 border border-white/10">
+            <div className="relative aspect-video">
+              <iframe
+                key={selectedVideo}
+                src={`${videos[selectedVideo].embedUrl}?autoplay=1`}
+                className="w-full h-full"
+                allow="autoplay; encrypted-media; fullscreen"
+                allowFullScreen
+                title={videos[selectedVideo].title}
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 text-white">
+                {videos[selectedVideo].title}
+              </h3>
+              <p className="text-gray-300 text-sm sm:text-base">
+                {videos[selectedVideo].description}
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
-        {/* Video Grid */}
+        {/* Video Cards Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto">
           {videos.map((video, index) => (
             <motion.div
@@ -187,8 +103,12 @@ const ProjectVideos = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="relative rounded-lg overflow-hidden shadow-xl group cursor-pointer bg-black/40 backdrop-blur-sm border border-white/10"
-              onClick={() => setPlayingVideo(playingVideo === index ? null : index)}
+              onClick={() => setSelectedVideo(index)}
+              className={`relative rounded-lg overflow-hidden shadow-xl group cursor-pointer transition-all duration-300 ${
+                selectedVideo === index
+                  ? "ring-2 ring-[#DC2626] bg-[#DC2626]/10"
+                  : "bg-black/40 backdrop-blur-sm border border-white/10 hover:border-[#DC2626]/50"
+              }`}
             >
               <div className="relative aspect-video overflow-hidden">
                 <Image
@@ -206,6 +126,11 @@ const ProjectVideos = () => {
                     <FiPlay className="w-5 h-5 md:w-6 md:h-6 text-white ml-1" />
                   </motion.div>
                 </div>
+                {selectedVideo === index && (
+                  <div className="absolute top-2 right-2 bg-[#DC2626] text-white px-2 py-1 rounded text-xs font-semibold">
+                    Playing
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent" />
               </div>
               <div className="p-3 sm:p-4">
