@@ -108,10 +108,12 @@ const Footer = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-10 h-10 rounded-full bg-white/10 flex items-center justify-center transition-colors duration-300 cursor-pointer ${socialColors[social.label] || ""}`}
+                        className={`w-10 h-10 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
+                          socialColors[social.label] || "hover:bg-[#DC2626]"
+                        }`}
                         aria-label={social.label}
                       >
-                        <Icon className="w-5 h-5 text-white transition-colors duration-300" />
+                        <Icon className="w-5 h-5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
                       </a>
                     );
                   })}
