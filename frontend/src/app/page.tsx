@@ -8,12 +8,12 @@ import Projects from "@/components/Projects";
 import Clients from "@/components/Clients";
 import Newsletter from "@/components/Newsletter";
 import ContactMap from "@/components/ContactMap";
+import Vision2030 from "@/components/Vision2030";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <div className="App">
-      <ScrollProgress />
       <Header />
       <main>
         <Hero />
@@ -27,6 +27,7 @@ export default function Home() {
 
         <Newsletter />
         <ContactMap />
+        <Vision2030 />
       </main>
       <Footer />
     </div>
