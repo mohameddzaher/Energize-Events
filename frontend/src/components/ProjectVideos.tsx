@@ -8,8 +8,10 @@ import Image from "next/image";
 
 const ProjectVideos = () => {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLIFrameElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [selectedVideo, setSelectedVideo] = useState(0);
+  const [selectedVideo, setSelectedVideo] = useState(1); // Default to second video
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
 
   const videos = [
     {
@@ -34,6 +36,30 @@ const ProjectVideos = () => {
       thumbnailUrl: "https://drive.google.com/thumbnail?id=14XRrAuUFYUMvDox3VDiZYo2GtyufjV3J&sz=w1920",
     },
   ];
+
+  // Intersection Observer for video auto-play/pause
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVideoVisible(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.5, // Video must be at least 50% visible
+      }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, [selectedVideo]);
 
   return (
     <section
@@ -73,15 +99,33 @@ const ProjectVideos = () => {
           className="mb-8 sm:mb-10 max-w-5xl mx-auto"
         >
           <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black/50 border border-white/10">
-            <div className="relative aspect-video">
-              <iframe
-                key={selectedVideo}
-                src={`${videos[selectedVideo].embedUrl}?autoplay=1`}
-                className="w-full h-full"
-                allow="autoplay; encrypted-media; fullscreen"
-                allowFullScreen
-                title={videos[selectedVideo].title}
-              />
+            <div ref={videoRef} className="relative aspect-video">
+              {isVideoVisible ? (
+                <iframe
+                  key={selectedVideo}
+                  src={`${videos[selectedVideo].embedUrl}?autoplay=1`}
+                  className="w-full h-full"
+                  allow="autoplay; encrypted-media; fullscreen"
+                  allowFullScreen
+                  title={videos[selectedVideo].title}
+                />
+              ) : (
+                <div className="w-full h-full bg-black/80 flex items-center justify-center">
+                  <Image
+                    src={videos[selectedVideo].thumbnailUrl}
+                    alt={videos[selectedVideo].title}
+                    fill
+                    className="object-cover opacity-50"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <FiPlay className="w-12 h-12 md:w-16 md:h-16 text-white/70 mx-auto mb-2" />
+                      <p className="text-white/70 text-sm">Scroll to view video</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 text-white">
