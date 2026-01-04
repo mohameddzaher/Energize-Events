@@ -146,7 +146,7 @@ const Projects = () => {
                     animate={
                       isInView
                         ? {
-                            opacity: index === activeIndex ? 1 : 0.25,
+                            opacity: index === activeIndex ? 1 : 0.7,
                             scale: index === activeIndex ? 1 : 0.9,
                           }
                         : {}
