@@ -2,85 +2,19 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import { FiPlay, FiVideo } from "react-icons/fi";
-import Image from "next/image";
+import { useRef } from "react";
+import { FiVideo } from "react-icons/fi";
 
 const ProjectVideos = () => {
   const ref = useRef(null);
-  const videoRef = useRef<HTMLIFrameElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [selectedVideo, setSelectedVideo] = useState(1); // Default to second video
-  const [isVideoVisible, setIsVideoVisible] = useState(true); // Start as visible
 
-  const videos = [
-    {
-      id: "1S_t4Nqu42C67h9OJhn6gTPw9trWzFntM",
-      title: "Event Showcase 1",
-      description: "Our exceptional event management in action",
-      embedUrl: "https://drive.google.com/file/d/1S_t4Nqu42C67h9OJhn6gTPw9trWzFntM/preview",
-      thumbnailUrl: "https://drive.google.com/thumbnail?id=1S_t4Nqu42C67h9OJhn6gTPw9trWzFntM&sz=w1920",
-    },
-    {
-      id: "1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0",
-      title: "Event Showcase 2",
-      description: "Creating unforgettable experiences",
-      embedUrl: "https://drive.google.com/file/d/1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0/preview",
-      thumbnailUrl: "https://drive.google.com/thumbnail?id=1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0&sz=w1920",
-    },
-    {
-      id: "14XRrAuUFYUMvDox3VDiZYo2GtyufjV3J",
-      title: "Event Showcase 3",
-      description: "World-class event production",
-      embedUrl: "https://drive.google.com/file/d/14XRrAuUFYUMvDox3VDiZYo2GtyufjV3J/preview",
-      thumbnailUrl: "https://drive.google.com/thumbnail?id=14XRrAuUFYUMvDox3VDiZYo2GtyufjV3J&sz=w1920",
-    },
-  ];
-
-  // Intersection Observer for video auto-play/pause
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVideoVisible(true);
-          } else {
-            setIsVideoVisible(false);
-          }
-        });
-      },
-      {
-        threshold: 0.3, // Video must be at least 30% visible
-        rootMargin: '50px',
-      }
-    );
-
-    const currentRef = videoRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [selectedVideo]);
-
-  // Reset video visibility when video changes
-  useEffect(() => {
-    setIsVideoVisible(false);
-    // Small delay to ensure iframe is ready
-    const timer = setTimeout(() => {
-      if (videoRef.current) {
-        const rect = videoRef.current.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-        setIsVideoVisible(isVisible);
-      }
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [selectedVideo]);
+  const video = {
+    id: "1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0",
+    title: "Event Showcase",
+    description: "Creating unforgettable experiences",
+    embedUrl: "https://drive.google.com/file/d/1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0/preview",
+  };
 
   return (
     <section
@@ -117,99 +51,32 @@ const ProjectVideos = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-8 sm:mb-10 max-w-5xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
           <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black/50 border border-white/10">
-            <div ref={videoRef} className="relative aspect-video bg-black">
+            <div className="relative aspect-video bg-black">
               <iframe
-                key={`${selectedVideo}-${isVideoVisible}`}
-                src={isVideoVisible ? `${videos[selectedVideo].embedUrl}?autoplay=1` : videos[selectedVideo].embedUrl}
+                src={`${video.embedUrl}?autoplay=1`}
                 className="w-full h-full"
                 allow="autoplay; encrypted-media; fullscreen; accelerometer; gyroscope; picture-in-picture"
                 allowFullScreen
-                title={videos[selectedVideo].title}
+                title={video.title}
                 style={{ border: 'none' }}
               />
-              {!isVideoVisible && (
-                <div className="absolute inset-0 bg-black/60 flex items-center justify-center pointer-events-none">
-                  <div className="text-center">
-                    <motion.div
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ repeat: Infinity, duration: 2 }}
-                      className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#DC2626]/80 flex items-center justify-center mx-auto mb-3 shadow-2xl"
-                    >
-                      <FiPlay className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" />
-                    </motion.div>
-                    <p className="text-white text-sm md:text-base font-medium">Scroll to play video</p>
-                  </div>
-                </div>
-              )}
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 text-white">
-                {videos[selectedVideo].title}
+                {video.title}
               </h3>
               <p className="text-gray-300 text-sm sm:text-base">
-                {videos[selectedVideo].description}
+                {video.description}
               </p>
             </div>
           </div>
         </motion.div>
-
-        {/* Video Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto">
-          {videos.map((video, index) => (
-            <motion.div
-              key={video.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              onClick={() => setSelectedVideo(index)}
-              className={`relative rounded-lg overflow-hidden shadow-xl group cursor-pointer transition-all duration-300 ${
-                selectedVideo === index
-                  ? "ring-2 ring-[#DC2626] bg-[#DC2626]/10"
-                  : "bg-black/40 backdrop-blur-sm border border-white/10 hover:border-[#DC2626]/50"
-              }`}
-            >
-              <div className="relative aspect-video overflow-hidden">
-                <Image
-                  src={video.thumbnailUrl}
-                  alt={video.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/20 to-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#DC2626] flex items-center justify-center shadow-lg"
-                  >
-                    <FiPlay className="w-5 h-5 md:w-6 md:h-6 text-white ml-1" />
-                  </motion.div>
-                </div>
-                {selectedVideo === index && (
-                  <div className="absolute top-2 right-2 bg-[#DC2626] text-white px-2 py-1 rounded text-xs font-semibold">
-                    Playing
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent" />
-              </div>
-              <div className="p-3 sm:p-4">
-                <h4 className="font-bold text-sm sm:text-base mb-1 text-white">
-                  {video.title}
-                </h4>
-                <p className="text-xs sm:text-sm text-gray-400">
-                  {video.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
 };
 
 export default ProjectVideos;
-
