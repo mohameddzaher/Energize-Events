@@ -132,6 +132,16 @@ img {
   content-visibility: auto;
 }
 
+/* Preload critical resources */
+html {
+  font-display: swap;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-display: swap;
+}
+
 /* Reduce motion for better performance */
 @media (prefers-reduced-motion: reduce) {
   *,
