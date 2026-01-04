@@ -136,20 +136,32 @@ export default function ClientsPage() {
         </section>
 
         {/* Partner With Us Section */}
-        <section className="relative py-8 sm:py-10 md:py-12 bg-white">
-          <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <section className="relative py-8 sm:py-10 md:py-12 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920"
+              alt="CTA Background"
+              fill
+              className="object-cover"
+              loading="lazy"
+              sizes="100vw"
+              quality={60}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/90 via-[#0A0A0A]/85 to-[#0A0A0A]/90" />
+          </div>
+          <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-4xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-gradient-to-br from-[#DC2626] to-red-700 rounded-2xl p-8 sm:p-10 text-white"
+                className="rounded-2xl p-8 sm:p-10 text-white"
               >
                 <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3">
                   Partner With Us
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-100 mb-6 max-w-2xl mx-auto">
+                <p className="text-xs sm:text-sm text-gray-200 mb-6 max-w-2xl mx-auto">
                   Join our growing list of satisfied clients and experience the difference that professional event management makes.
                 </p>
                 <Link href="/contact">
