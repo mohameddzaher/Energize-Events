@@ -2,18 +2,21 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { FiVideo } from "react-icons/fi";
+import { useRef, useState } from "react";
+import { FiVideo, FiPlay } from "react-icons/fi";
+import Image from "next/image";
 
 const ProjectVideos = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const video = {
     id: "1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0",
     title: "Event Showcase",
     description: "Creating unforgettable experiences",
     embedUrl: "https://drive.google.com/file/d/1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0/preview",
+    thumbnailUrl: "https://drive.google.com/thumbnail?id=1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0&sz=w1920",
   };
 
   return (
@@ -55,14 +58,38 @@ const ProjectVideos = () => {
         >
           <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black/50 border border-white/10">
             <div className="relative aspect-video bg-black">
-              <iframe
-                src={`${video.embedUrl}?autoplay=1`}
-                className="w-full h-full"
-                allow="autoplay; encrypted-media; fullscreen; accelerometer; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={video.title}
-                style={{ border: 'none' }}
-              />
+              {isPlaying ? (
+                <iframe
+                  src={`${video.embedUrl}?autoplay=1`}
+                  className="w-full h-full"
+                  allow="autoplay; encrypted-media; fullscreen; accelerometer; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title={video.title}
+                  style={{ border: 'none' }}
+                />
+              ) : (
+                <div 
+                  className="w-full h-full relative cursor-pointer group"
+                  onClick={() => setIsPlaying(true)}
+                >
+                  <Image
+                    src={video.thumbnailUrl}
+                    alt={video.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#DC2626] flex items-center justify-center shadow-2xl"
+                    >
+                      <FiPlay className="w-10 h-10 md:w-12 md:h-12 text-white ml-1" />
+                    </motion.div>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 text-white">
