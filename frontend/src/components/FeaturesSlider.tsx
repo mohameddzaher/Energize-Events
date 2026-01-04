@@ -64,16 +64,11 @@ const FeaturesSlider = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
-                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ 
-                  delay: index * 0.12, 
-                  duration: 0.6,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                whileHover={{ y: -5, scale: 1.05, rotateY: 5 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{ y: -3, scale: 1.02 }}
                 className="group relative cursor-pointer"
               >
                 <div className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-3 sm:p-4 border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 h-full flex flex-col items-center text-center">

@@ -94,16 +94,11 @@ const ContactMap = () => {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  initial={{ opacity: 0, x: -30, rotateX: -10 }}
-                  whileInView={{ opacity: 1, x: 0, rotateX: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ 
-                    delay: index * 0.15, 
-                    duration: 0.6,
-                    type: "spring",
-                    stiffness: 100
-                  }}
-                  whileHover={{ x: 8, scale: 1.03, rotateY: 5 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ x: 5, scale: 1.02 }}
                   className="flex items-center gap-4 p-4 sm:p-5 bg-white rounded-xl border border-gray-100 hover:border-[#DC2626]/30 hover:shadow-lg transition-all duration-300 cursor-pointer group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#DC2626]/10 to-gray-100 flex items-center justify-center group-hover:from-[#DC2626]/20 group-hover:to-gray-200 transition-all duration-300 flex-shrink-0">
