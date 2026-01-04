@@ -32,11 +32,6 @@ const Footer = () => {
       { name: "Event Activation", href: "/services" },
       { name: "Technology & Production", href: "/services" },
     ],
-    resources: [
-      { name: "Blog", href: "/blog" },
-      { name: "Our Work", href: "/projects" },
-      { name: "Our Clients", href: "/clients" },
-    ],
   };
 
   const socialLinks = [
@@ -70,7 +65,7 @@ const Footer = () => {
 
       <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-10 sm:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 mb-6 sm:mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-6 sm:mb-8">
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <motion.div
@@ -221,29 +216,99 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            {/* Resources */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center"
-            >
-              <h4 className="text-sm font-bold mb-4">Resources</h4>
-              <ul className="space-y-2">
-                {footerLinks.resources.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
           </div>
+
+          {/* Creative Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-8 sm:mt-10 pt-8 sm:pt-10 border-t border-white/10"
+          >
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+              {/* Newsletter Section */}
+              <div className="bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 rounded-xl p-6 sm:p-8 border border-white/10">
+                <h4 className="text-sm font-bold mb-3 text-white">Stay Updated</h4>
+                <p className="text-gray-400 text-xs sm:text-sm mb-4">
+                  Subscribe to our newsletter for the latest event insights and updates.
+                </p>
+                <form className="flex gap-2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 text-xs sm:text-sm focus:outline-none focus:border-[#DC2626] transition-colors"
+                  />
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-[#DC2626] text-white rounded-lg hover:bg-red-700 transition-colors text-xs sm:text-sm font-semibold cursor-pointer"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+
+              {/* Quick Links & Social */}
+              <div className="bg-gradient-to-br from-white/5 to-white/0 rounded-xl p-6 sm:p-8 border border-white/10">
+                <h4 className="text-sm font-bold mb-4 text-white">Quick Links</h4>
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <Link
+                    href="/blog"
+                    className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    href="/projects"
+                    className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
+                  >
+                    Our Work
+                  </Link>
+                  <Link
+                    href="/clients"
+                    className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
+                  >
+                    Our Clients
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
+                  >
+                    Careers
+                  </Link>
+                </div>
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-xs text-gray-400 mb-2">Follow Us</p>
+                  <div className="flex gap-2">
+                    {socialLinks.map((social, index) => {
+                      const Icon = social.icon;
+                      const socialColors: Record<string, string> = {
+                        Instagram:
+                          "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
+                        Facebook: "hover:bg-blue-600",
+                        Twitter: "hover:bg-sky-500",
+                        LinkedIn: "hover:bg-blue-700",
+                      };
+                      return (
+                        <a
+                          key={index}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`w-8 h-8 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
+                            socialColors[social.label] || "hover:bg-[#DC2626]"
+                          }`}
+                          aria-label={social.label}
+                        >
+                          <Icon className="w-4 h-4 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Bottom Bar */}
           <div className="border-t border-white/10 pt-4 sm:pt-6 ">
