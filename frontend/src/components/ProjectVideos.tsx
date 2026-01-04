@@ -43,7 +43,10 @@ const ProjectVideos = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#DC2626] rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div
+          className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
       </div>
 
       <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -55,13 +58,16 @@ const ProjectVideos = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DC2626]/20 rounded-full mb-3 border border-[#DC2626]/30">
             <FiVideo className="w-3.5 h-3.5 text-[#DC2626]" />
-            <span className="text-[#DC2626] font-medium text-xs">VIDEO SHOWCASE</span>
+            <span className="text-[#DC2626] font-medium text-xs">
+              VIDEO SHOWCASE
+            </span>
           </div>
           <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-white mb-2">
             Our Work in Motion
           </h2>
           <p className="text-xs sm:text-sm text-gray-400 max-w-2xl mx-auto">
-            Experience the energy and excellence of our events through these highlights
+            Experience the energy and excellence of our events through these
+            highlights
           </p>
         </motion.div>
 
@@ -73,7 +79,7 @@ const ProjectVideos = () => {
             transition={{ duration: 0.6 }}
             className="mb-6 sm:mb-8 flex justify-center"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/50 border border-white/10 w-full max-w-4xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/50 border border-white/10 w-full max-w-3xl">
               <div className="relative aspect-video bg-black">
                 <video
                   ref={videoRef}
@@ -101,7 +107,7 @@ const ProjectVideos = () => {
           </motion.div>
 
           {/* Video Cards Grid - Horizontal */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto">
             {videos.map((video, index) => (
               <motion.div
                 key={video.id}
@@ -121,31 +127,36 @@ const ProjectVideos = () => {
                     src={video.videoUrl}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     muted
-                    loop
                     playsInline
+                    preload="metadata"
+                    onLoadedMetadata={(e) => {
+                      // Set video to first frame as thumbnail
+                      const video = e.currentTarget;
+                      video.currentTime = 0.1;
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/10 to-black/50 group-hover:from-[#DC2626]/20 transition-colors" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-10 h-10 rounded-full bg-[#DC2626]/80 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:bg-[#DC2626] transition-colors"
+                    >
+                      <FiPlay className="w-5 h-5 text-white ml-1" />
+                    </motion.div>
+                  </div>
                   {selectedVideo === index && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-[#DC2626]/10">
-                      <motion.div
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ repeat: Infinity, duration: 2 }}
-                        className="w-12 h-12 rounded-full bg-[#DC2626] flex items-center justify-center shadow-xl"
-                      >
-                        <FiPlay className="w-6 h-6 text-white ml-1" />
-                      </motion.div>
-                    </div>
+                    <div className="absolute inset-0 ring-2 ring-[#DC2626] rounded-xl" />
                   )}
-                  <div className="absolute top-2 right-2 bg-[#DC2626] text-white px-2 py-1 rounded text-[10px] font-semibold">
+                  <div className="absolute top-2 right-2 bg-[#DC2626] text-white px-1.5 py-0.5 rounded text-[9px] font-semibold">
                     {index + 1}
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent" />
                 </div>
-                <div className="p-3 sm:p-4">
-                  <h4 className="font-bold text-sm mb-1 text-white line-clamp-1">
+                <div className="p-2.5 sm:p-3">
+                  <h4 className="font-bold text-xs sm:text-sm mb-0.5 text-white line-clamp-1">
                     {video.title}
                   </h4>
-                  <p className="text-xs text-gray-400 line-clamp-2">
+                  <p className="text-[10px] sm:text-xs text-gray-400 line-clamp-2">
                     {video.description}
                   </p>
                 </div>
