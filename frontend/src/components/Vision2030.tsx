@@ -54,9 +54,9 @@ const Vision2030 = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-5 shadow-lg border border-gray-100"
+            className="rounded-lg p-4 sm:p-5"
           >
-            <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-center mb-4">
+            <p className="text-white/90 text-xs sm:text-sm leading-relaxed text-center mb-4">
               We are proud to contribute to Saudi Arabia&apos;s Vision 2030 by
               creating world-class events that showcase innovation, excellence,
               and cultural richness on the global stage. Our commitment aligns
@@ -65,42 +65,42 @@ const Vision2030 = () => {
             </p>
 
             <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
-              <div className="text-center p-3 bg-gradient-to-br from-[#DC2626]/5 to-transparent rounded-lg">
+              <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
                 <div className="flex justify-center mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#DC2626]/20 to-red-600/20 flex items-center justify-center">
                     <FiZap className="w-4 h-4 text-[#DC2626]" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 text-[10px] sm:text-xs mb-1">
+                <h3 className="font-bold text-white text-[10px] sm:text-xs mb-1">
                   Innovation
                 </h3>
-                <p className="text-gray-600 text-[9px] sm:text-[10px]">
+                <p className="text-white/70 text-[9px] sm:text-[10px]">
                   Cutting-edge event solutions
                 </p>
               </div>
-              <div className="text-center p-3 bg-gradient-to-br from-green-500/5 to-transparent rounded-lg">
+              <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
                 <div className="flex justify-center mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500/10 to-green-600/10 flex items-center justify-center">
-                    <FiAward className="w-4 h-4 text-green-600" />
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/20 flex items-center justify-center">
+                    <FiAward className="w-4 h-4 text-green-400" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 text-[10px] sm:text-xs mb-1">
+                <h3 className="font-bold text-white text-[10px] sm:text-xs mb-1">
                   Excellence
                 </h3>
-                <p className="text-gray-600 text-[9px] sm:text-[10px]">
+                <p className="text-white/70 text-[9px] sm:text-[10px]">
                   World-class standards
                 </p>
               </div>
-              <div className="text-center p-3 bg-gradient-to-br from-[#DC2626]/5 to-transparent rounded-lg">
+              <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
                 <div className="flex justify-center mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#DC2626]/20 to-red-600/20 flex items-center justify-center">
                     <FiGlobe className="w-4 h-4 text-[#DC2626]" />
                   </div>
                 </div>
-                <h3 className="font-bold text-gray-900 text-[10px] sm:text-xs mb-1">
+                <h3 className="font-bold text-white text-[10px] sm:text-xs mb-1">
                   Global Impact
                 </h3>
-                <p className="text-gray-600 text-[9px] sm:text-[10px]">
+                <p className="text-white/70 text-[9px] sm:text-[10px]">
                   International recognition
                 </p>
               </div>
