@@ -10,7 +10,7 @@ import {
   FiTwitter,
   FiLinkedin,
 } from "react-icons/fi";
-import { FaYoutube, FaTiktok, FaSnapchat } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -44,16 +44,6 @@ const Footer = () => {
       icon: FiTwitter,
       href: "https://x.com/EnergizeBusKSA",
       label: "Twitter",
-    },
-    {
-      icon: FaSnapchat,
-      href: "https://www.snapchat.com/@energizebusksa?share_id=28aXYvansJY&locale=en-SA",
-      label: "Snapchat",
-    },
-    {
-      icon: FaTiktok,
-      href: "https://www.tiktok.com/@energizebusksa?_t=zs-90hk3beie2d&_r=1",
-      label: "TikTok",
     },
     {
       icon: FiFacebook,
@@ -109,8 +99,6 @@ const Footer = () => {
                       Twitter: "hover:bg-sky-500",
                       LinkedIn: "hover:bg-blue-700",
                       YouTube: "hover:bg-red-600",
-                      TikTok: "hover:bg-black",
-                      Snapchat: "hover:bg-yellow-400",
                     };
                     return (
                       <a
@@ -272,27 +260,6 @@ const Footer = () => {
                   </button>
                 </form>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Vision 2030 Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10"
-          >
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/10 to-green-600/10 rounded-full mb-3 border border-white/10">
-                <span className="text-[#DC2626] font-semibold text-[10px] sm:text-xs">
-                  🇸🇦 Vision 2030
-                </span>
-              </div>
-              <p className="text-gray-400 text-[10px] sm:text-xs leading-relaxed">
-                Contributing to Saudi Arabia&apos;s Vision 2030 by creating world-class events
-                that showcase innovation, excellence, and cultural richness on the global stage.
-              </p>
             </div>
           </motion.div>
 

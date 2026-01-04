@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiClock, FiSend } from "react-icons/fi";
 import { FiInstagram, FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
-import { FaYoutube, FaTiktok, FaSnapchat } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -78,16 +78,6 @@ export default function ContactPage() {
       icon: FiTwitter,
       href: "https://x.com/EnergizeBusKSA",
       label: "Twitter",
-    },
-    {
-      icon: FaSnapchat,
-      href: "https://www.snapchat.com/@energizebusksa?share_id=28aXYvansJY&locale=en-SA",
-      label: "Snapchat",
-    },
-    {
-      icon: FaTiktok,
-      href: "https://www.tiktok.com/@energizebusksa?_t=zs-90hk3beie2d&_r=1",
-      label: "TikTok",
     },
     {
       icon: FiFacebook,
@@ -270,23 +260,21 @@ export default function ContactPage() {
                       Twitter: "hover:bg-sky-500",
                       LinkedIn: "hover:bg-blue-700",
                       YouTube: "hover:bg-red-600",
-                      TikTok: "hover:bg-black",
-                      Snapchat: "hover:bg-yellow-400",
                     };
-                    return (
-                      <a
-                        key={index}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`w-8 h-8 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
-                          socialColors[social.label] || "hover:bg-[#DC2626]"
-                        }`}
-                        aria-label={social.label}
-                      >
-                        <Icon className="w-3.5 h-3.5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
-                      </a>
-                    );
+                      return (
+                        <a
+                          key={index}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`w-8 h-8 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
+                            socialColors[social.label] || "hover:bg-[#DC2626]"
+                          }`}
+                          aria-label={social.label}
+                        >
+                          <Icon className="w-3.5 h-3.5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
+                        </a>
+                      );
                     })}
                   </div>
                   <p className="mt-3 text-gray-600 text-xs">
