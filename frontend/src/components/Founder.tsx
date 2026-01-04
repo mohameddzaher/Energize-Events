@@ -216,25 +216,25 @@ const Founder = () => {
         >
           <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-900 to-black">
             <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#DC2626]/20 to-transparent rounded-full -translate-x-16 -translate-y-16" />
-            <div className="relative p-5 sm:p-6">
-              <div className="flex items-start gap-3 sm:gap-4">
+            <div className="relative p-4 sm:p-5">
+              <div className="flex items-start gap-2 sm:gap-3">
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#DC2626]/20 to-red-600/20 flex items-center justify-center">
-                    <FaAward className="w-5 h-5 text-[#DC2626]" />
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#DC2626]/20 to-red-600/20 flex items-center justify-center">
+                    <FaAward className="w-4 h-4 text-[#DC2626]" />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <p className="text-white/90 text-sm italic mb-3">
+                  <p className="text-white/90 text-xs sm:text-sm italic mb-2 leading-relaxed">
                     &quot;We believe in creating not just events, but
                     experiences that inspire, connect, and transform. Our
                     commitment is to excellence, innovation, and building
                     lasting partnerships.&quot;
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-[#DC2626] font-medium text-xs">
+                    <span className="text-[#DC2626] font-medium text-[10px] sm:text-xs">
                       Mr. Dulaim Al Nasher
                     </span>
-                    <span className="text-gray-400 text-xs">
+                    <span className="text-gray-400 text-[10px] sm:text-xs">
                       Founder & Chairman
                     </span>
                   </div>
