@@ -11,7 +11,7 @@ const ProjectVideos = () => {
   const videoRef = useRef<HTMLIFrameElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [selectedVideo, setSelectedVideo] = useState(1); // Default to second video
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [isVideoVisible, setIsVideoVisible] = useState(true); // Start as visible
 
   const videos = [
     {
@@ -42,23 +42,44 @@ const ProjectVideos = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsVideoVisible(entry.isIntersecting);
+          if (entry.isIntersecting) {
+            setIsVideoVisible(true);
+          } else {
+            setIsVideoVisible(false);
+          }
         });
       },
       {
-        threshold: 0.5, // Video must be at least 50% visible
+        threshold: 0.3, // Video must be at least 30% visible
+        rootMargin: '50px',
       }
     );
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
+    const currentRef = videoRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
+  }, [selectedVideo]);
+
+  // Reset video visibility when video changes
+  useEffect(() => {
+    setIsVideoVisible(false);
+    // Small delay to ensure iframe is ready
+    const timer = setTimeout(() => {
+      if (videoRef.current) {
+        const rect = videoRef.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        setIsVideoVisible(isVisible);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [selectedVideo]);
 
   return (
@@ -99,30 +120,27 @@ const ProjectVideos = () => {
           className="mb-8 sm:mb-10 max-w-5xl mx-auto"
         >
           <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black/50 border border-white/10">
-            <div ref={videoRef} className="relative aspect-video">
-              {isVideoVisible ? (
-                <iframe
-                  key={selectedVideo}
-                  src={`${videos[selectedVideo].embedUrl}?autoplay=1`}
-                  className="w-full h-full"
-                  allow="autoplay; encrypted-media; fullscreen"
-                  allowFullScreen
-                  title={videos[selectedVideo].title}
-                />
-              ) : (
-                <div className="w-full h-full bg-black/80 flex items-center justify-center">
-                  <Image
-                    src={videos[selectedVideo].thumbnailUrl}
-                    alt={videos[selectedVideo].title}
-                    fill
-                    className="object-cover opacity-50"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <FiPlay className="w-12 h-12 md:w-16 md:h-16 text-white/70 mx-auto mb-2" />
-                      <p className="text-white/70 text-sm">Scroll to view video</p>
-                    </div>
+            <div ref={videoRef} className="relative aspect-video bg-black">
+              <iframe
+                key={`${selectedVideo}-${isVideoVisible}`}
+                src={isVideoVisible ? `${videos[selectedVideo].embedUrl}?autoplay=1` : videos[selectedVideo].embedUrl}
+                className="w-full h-full"
+                allow="autoplay; encrypted-media; fullscreen; accelerometer; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={videos[selectedVideo].title}
+                style={{ border: 'none' }}
+              />
+              {!isVideoVisible && (
+                <div className="absolute inset-0 bg-black/60 flex items-center justify-center pointer-events-none">
+                  <div className="text-center">
+                    <motion.div
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ repeat: Infinity, duration: 2 }}
+                      className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#DC2626]/80 flex items-center justify-center mx-auto mb-3 shadow-2xl"
+                    >
+                      <FiPlay className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" />
+                    </motion.div>
+                    <p className="text-white text-sm md:text-base font-medium">Scroll to play video</p>
                   </div>
                 </div>
               )}
