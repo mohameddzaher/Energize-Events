@@ -93,9 +93,12 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-6 sm:mb-8"
         >
-          <span className="text-[#DC2626] font-semibold text-xs mb-2 block">
-            PROJECTS
-          </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DC2626]/10 rounded-full mb-2">
+            <div className="w-1.5 h-1.5 bg-[#DC2626] rounded-full animate-pulse" />
+            <span className="text-[#DC2626] font-medium text-xs">
+              PROJECTS
+            </span>
+          </div>
           <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#0A0A0A] mb-2">
             Our Recent Work
           </h2>
