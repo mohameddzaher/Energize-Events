@@ -59,8 +59,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50"
-          : "bg-gradient-to-r from-[#DC2626]/10 via-red-600/5 to-[#DC2626]/10 backdrop-blur-md border-b border-white/10"
+          ? "bg-white/95 backdrop-blur-md shadow-lg  border-gray-200/50"
+          : "bg-gradient-to-r from-[#DC2626]/10 via-black to-[#DC2626]/10 backdrop-blur-md  border-white/10"
       }`}
     >
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-12">
@@ -69,11 +69,11 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/EEM.png"
+                src={isScrolled ? "/images/EEM.png" : "/images/EEM-white.png"}
                 alt="Energize Events Logo"
                 width={72}
                 height={72}
-                className="w-16 h-16 md:w-34 md:h-18 object-contain"
+                className="w-16 h-16 md:w-34 md:h-18 object-contain transition-all duration-500"
                 priority
               />
             </Link>
