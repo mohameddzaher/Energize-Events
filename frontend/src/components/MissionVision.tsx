@@ -31,9 +31,9 @@ const MissionVision = () => {
         {/* Mission Section */}
             <motion.div
               ref={missionRef}
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
-              animate={missionInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={missionInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
               className="mb-6 sm:mb-8"
             >
           <div className="grid md:grid-cols-2 gap-5 md:gap-6 items-center">
@@ -97,9 +97,9 @@ const MissionVision = () => {
         {/* Vision Section */}
             <motion.div
               ref={visionRef}
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
-              animate={visionInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={visionInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
             >
           <div className="grid md:grid-cols-2 gap-5 md:gap-6 items-center">
             <motion.div

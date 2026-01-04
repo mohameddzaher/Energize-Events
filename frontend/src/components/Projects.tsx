@@ -182,16 +182,10 @@ const Projects = () => {
           {projects.slice(0, 3).map((project, index) => (
             <Link key={index} href={`/projects/${project.slug}`}>
               <motion.div
-                initial={{ opacity: 0, y: 40, scale: 0.9, rotateY: -15 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ 
-                  delay: 0.3 + index * 0.12, 
-                  duration: 0.6,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                whileHover={{ y: -8, scale: 1.05, rotateY: 5 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
+                whileHover={{ y: -5 }}
                 className="relative rounded-lg overflow-hidden shadow-lg group cursor-pointer h-full"
               >
                 <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
