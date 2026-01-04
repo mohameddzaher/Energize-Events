@@ -253,14 +253,14 @@ export default function ContactPage() {
                   <div className="flex gap-3">
                     {socialLinks.map((social, index) => {
                       const Icon = social.icon;
-                    const socialColors: Record<string, string> = {
-                      Instagram:
-                        "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
-                      Facebook: "hover:bg-blue-600",
-                      Twitter: "hover:bg-sky-500",
-                      LinkedIn: "hover:bg-blue-700",
-                      YouTube: "hover:bg-red-600",
-                    };
+                      const socialColors: Record<string, string> = {
+                        Instagram:
+                          "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
+                        Facebook: "hover:bg-blue-600",
+                        Twitter: "hover:bg-sky-500",
+                        LinkedIn: "hover:bg-blue-700",
+                        YouTube: "hover:bg-red-600",
+                      };
                       return (
                         <a
                           key={index}

@@ -70,7 +70,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white mb-3 sm:mb-4 leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-serif font-bold text-white mb-3 sm:mb-4 leading-tight"
           >
             Elevate Your Events,
             <br />
@@ -86,7 +86,7 @@ const Hero = () => {
             className="text-xs sm:text-sm md:text-base text-gray-200 mb-6 sm:mb-8 font-light max-w-2xl mx-auto px-4 leading-relaxed"
           >
             All-in-one platform to plan, execute, and deliver exceptional events
-            — faster and smarter.
+            - faster and smarter.
           </motion.p>
 
           <motion.div
@@ -102,7 +102,7 @@ const Hero = () => {
                   boxShadow: "0 10px 25px -5px rgba(220, 38, 38, 0.4)",
                 }}
                 whileTap={{ scale: 0.97 }}
-                className="group relative bg-[#DC2626] text-white px-6 py-3 rounded-full font-semibold text-xs sm:text-sm w-full sm:w-auto hover:bg-red-700 transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
+                className="cursor-pointer group relative bg-red-900 text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm w-full sm:w-auto hover:bg-red-700 transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Contact Us
@@ -121,7 +121,7 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="group relative bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-full font-semibold text-xs sm:text-sm w-full sm:w-auto border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="cursor-pointer group relative bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm w-full sm:w-auto  border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Our Work

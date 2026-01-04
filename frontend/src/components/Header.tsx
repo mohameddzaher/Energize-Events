@@ -64,16 +64,18 @@ export default function Header() {
       }`}
     >
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-12">
-        <div className="flex items-center justify-between h-12 md:h-15">
+        <div className="flex items-center justify-between h-12 md:h-16">
           {/* Logo (Left) */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src={isScrolled ? "/images/EEM.png" : "/images/EEM-white.png"}
+                src={
+                  isScrolled ? "/images/EEM-Black.png" : "/images/EEM-white.png"
+                }
                 alt="Energize Events Logo"
                 width={72}
                 height={72}
-                className="w-16 h-16 md:w-34 md:h-18 object-contain transition-all duration-500"
+                className="w-18 h-16 md:w-38 md:h-20 object-contain transition-all duration-500"
                 priority
               />
             </Link>
@@ -88,7 +90,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-3 py-1.5 rounded-md transition-all duration-200 text-[10px] sm:text-[11px] ${
+                    className={`px-3 py-1.5 rounded-md transition-all duration-200 text-[10px] sm:text-[12px] ${
                       active ? "font-bold" : "font-medium"
                     } ${
                       isScrolled
