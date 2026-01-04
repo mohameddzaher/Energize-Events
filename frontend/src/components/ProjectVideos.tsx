@@ -106,7 +106,7 @@ const ProjectVideos = () => {
             </motion.div>
 
             {/* Video Cards Sidebar */}
-            <div className="flex flex-col gap-4 sm:gap-5">
+            <div className="flex flex-col gap-3 sm:gap-4">
               {videos.map((video, index) => (
                 <motion.div
                   key={video.id}
@@ -115,13 +115,13 @@ const ProjectVideos = () => {
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
                   whileHover={{ x: -4, scale: 1.02 }}
                   onClick={() => setSelectedVideo(index)}
-                  className={`relative rounded-xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-300 flex-1 ${
+                  className={`relative rounded-lg overflow-hidden shadow-lg group cursor-pointer transition-all duration-300 ${
                     selectedVideo === index
-                      ? "ring-2 ring-[#DC2626] bg-[#DC2626]/10 scale-105"
+                      ? "ring-2 ring-[#DC2626] bg-[#DC2626]/10 scale-[1.02]"
                       : "bg-black/40 backdrop-blur-sm border border-white/10 hover:border-[#DC2626]/50"
                   }`}
                 >
-                  <div className="relative aspect-video overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     <video
                       src={video.videoUrl}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -135,22 +135,22 @@ const ProjectVideos = () => {
                         <motion.div
                           animate={{ scale: [1, 1.1, 1] }}
                           transition={{ repeat: Infinity, duration: 2 }}
-                          className="w-10 h-10 rounded-full bg-[#DC2626] flex items-center justify-center shadow-xl"
+                          className="w-8 h-8 rounded-full bg-[#DC2626] flex items-center justify-center shadow-xl"
                         >
-                          <FiPlay className="w-5 h-5 text-white ml-0.5" />
+                          <FiPlay className="w-4 h-4 text-white ml-0.5" />
                         </motion.div>
                       </div>
                     )}
-                    <div className="absolute top-2 left-2 bg-[#DC2626] text-white px-2 py-0.5 rounded text-[10px] font-semibold">
+                    <div className="absolute top-1.5 left-1.5 bg-[#DC2626] text-white px-1.5 py-0.5 rounded text-[9px] font-semibold">
                       {index + 1}
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-transparent to-transparent" />
                   </div>
-                  <div className="p-3 sm:p-4">
-                    <h4 className="font-bold text-sm mb-1 text-white line-clamp-1">
+                  <div className="p-2.5 sm:p-3">
+                    <h4 className="font-bold text-xs sm:text-sm mb-0.5 text-white line-clamp-1">
                       {video.title}
                     </h4>
-                    <p className="text-xs text-gray-400 line-clamp-2">
+                    <p className="text-[10px] sm:text-xs text-gray-400 line-clamp-2">
                       {video.description}
                     </p>
                   </div>
