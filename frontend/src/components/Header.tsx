@@ -77,7 +77,7 @@ export default function Header() {
                 alt="Energize Events Logo"
                 width={72}
                 height={72}
-                className="w-18 h-16 md:w-34 md:h-18 object-contain transition-all duration-500"
+                className="w-18 h-16 md:w-42 md:h-18 object-contain transition-all duration-500"
                 priority
                 fetchPriority="high"
               />
@@ -86,7 +86,7 @@ export default function Header() {
 
           {/* Desktop Navigation (Center) */}
           <nav className="hidden lg:flex items-center justify-center flex-1">
-            <div className="flex items-center gap-3 xl:gap-4">
+            <div className="flex items-center gap-3 xl:gap-3">
               {navItems.map((item) => {
                 const active = isActive(item.href);
                 return (
