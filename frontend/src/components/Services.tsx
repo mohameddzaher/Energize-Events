@@ -32,7 +32,7 @@ const Services = () => {
       slug: "conferences-seminars",
       description:
         "We offer integrated conferences and seminars with high smoothness and excellence through creative thinking that inspires attendees and effectively develops engagement.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -41,7 +41,7 @@ const Services = () => {
       slug: "commercial-exhibitions",
       description:
         "Organizing world-class commercial exhibitions aimed at showcasing brands and products and highlighting the latest innovations.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -50,7 +50,7 @@ const Services = () => {
       slug: "event-activation",
       description:
         "We create unique and unforgettable brand experiences aimed at generating positive interaction and effectively stimulating audience participation.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -59,7 +59,7 @@ const Services = () => {
       slug: "event-design-planning",
       description:
         "We excel in designing unique event concepts that reflect the client's vision and identity, focusing on innovation and excellence at every stage.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -68,7 +68,7 @@ const Services = () => {
       slug: "technology-production",
       description:
         "We provide advanced technological and production solutions that create a qualitative shift in every event through the latest equipment and systems.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -77,7 +77,7 @@ const Services = () => {
       slug: "stage-design",
       description:
         "We create immersive and visually stunning stages that embody your vision and tell your story in all its details.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -86,7 +86,7 @@ const Services = () => {
       slug: "hospitality-catering",
       description:
         "We provide elegant hospitality and catering services aimed at impressing guests and enhancing their experience.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -95,7 +95,7 @@ const Services = () => {
       slug: "event-planning",
       description:
         "We provide comprehensive and integrated planning services covering all stages of the event from start to finish.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -104,7 +104,7 @@ const Services = () => {
       slug: "entertainment-events",
       description:
         "We excel in coordinating and organizing exciting entertainment experiences that captivate audiences and keep them engaged.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -113,7 +113,7 @@ const Services = () => {
       slug: "product-launches",
       description:
         "We execute product launch campaigns in an innovative and effective style that generates momentum and positions your brand.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
     {
@@ -122,7 +122,7 @@ const Services = () => {
       slug: "special-events",
       description:
         "We transform unique ideas into exceptional experiences through events designed specifically to embody your vision.",
-      iconColor: "text-red-800",
+      iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
   ];

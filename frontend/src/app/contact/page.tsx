@@ -6,7 +6,8 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiClock, FiSend } from "react-icons/fi";
 import { FiInstagram, FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
-import { FaYoutube } from "react-icons/fa";
+import { FaYoutube, FaTiktok } from "react-icons/fa";
+import { BsSnapchat, BsThreads } from "react-icons/bs";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -88,6 +89,21 @@ export default function ContactPage() {
       icon: FaYoutube,
       href: "https://www.youtube.com/@EnergizeBusKSA",
       label: "YouTube",
+    },
+    {
+      icon: FaTiktok,
+      href: "https://www.tiktok.com/@energizebusksa",
+      label: "TikTok",
+    },
+    {
+      icon: BsSnapchat,
+      href: "https://www.snapchat.com/add/energizebusksa",
+      label: "Snapchat",
+    },
+    {
+      icon: BsThreads,
+      href: "https://www.threads.net/@energizebusksa",
+      label: "Threads",
     },
   ];
 
@@ -250,7 +266,7 @@ export default function ContactPage() {
                   <h3 className="text-base font-bold text-[#0A0A0A] mb-3">
                     Follow Us
                   </h3>
-                  <div className="flex gap-3">
+                  <div className="grid grid-cols-4 gap-3 max-w-xs">
                     {socialLinks.map((social, index) => {
                       const Icon = social.icon;
                       const socialColors: Record<string, string> = {
@@ -260,6 +276,9 @@ export default function ContactPage() {
                         Twitter: "hover:bg-sky-500",
                         LinkedIn: "hover:bg-blue-700",
                         YouTube: "hover:bg-red-600",
+                        TikTok: "hover:bg-black",
+                        Snapchat: "hover:bg-yellow-400",
+                        Threads: "hover:bg-black",
                       };
                       return (
                         <a

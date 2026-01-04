@@ -105,7 +105,7 @@ const Footer = () => {
                   Creating unforgettable experiences through innovative event
                   management solutions. Elevate your events with our expertise.
                 </p>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-2.5 mb-3">
+                <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 gap-2 sm:gap-2.5 mb-3 justify-center lg:justify-start max-w-xs lg:max-w-none">
                   {socialLinks.map((social, index) => {
                     const Icon = social.icon;
                     const socialColors: Record<string, string> = {
