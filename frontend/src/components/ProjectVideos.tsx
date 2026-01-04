@@ -2,22 +2,38 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { FiVideo, FiPlay } from "react-icons/fi";
-import Image from "next/image";
+import { useRef, useState, useEffect } from "react";
+import { FiVideo } from "react-icons/fi";
 
 const ProjectVideos = () => {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(0);
 
-  const video = {
-    id: "1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0",
-    title: "Event Showcase",
-    description: "Creating unforgettable experiences",
-    embedUrl: "https://drive.google.com/file/d/1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0/preview",
-    thumbnailUrl: "https://drive.google.com/thumbnail?id=1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0&sz=w1920",
-  };
+  const videos = [
+    {
+      id: "saudia-family-day",
+      title: "Saudia Family Day",
+      description: "Creating unforgettable family experiences",
+      videoUrl: "/images/Saudia - FamilyDay.mp4",
+    },
+    {
+      id: "skyteam",
+      title: "SkyTeam Event",
+      description: "World-class event production and excellence",
+      videoUrl: "/images/SkyTeam.mp4",
+    },
+  ];
+
+  // Auto-play video when it becomes visible
+  useEffect(() => {
+    if (videoRef.current && isInView) {
+      videoRef.current.play().catch(() => {
+        // Autoplay was prevented
+      });
+    }
+  }, [selectedVideo, isInView]);
 
   return (
     <section
@@ -54,53 +70,76 @@ const ProjectVideos = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
+          className="mb-8 sm:mb-10 max-w-5xl mx-auto"
         >
           <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black/50 border border-white/10">
             <div className="relative aspect-video bg-black">
-              {isPlaying ? (
-                <iframe
-                  src={`${video.embedUrl}?autoplay=1`}
-                  className="w-full h-full"
-                  allow="autoplay; encrypted-media; fullscreen; accelerometer; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title={video.title}
-                  style={{ border: 'none' }}
-                />
-              ) : (
-                <div 
-                  className="w-full h-full relative cursor-pointer group"
-                  onClick={() => setIsPlaying(true)}
-                >
-                  <Image
-                    src={video.thumbnailUrl}
-                    alt={video.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#DC2626] flex items-center justify-center shadow-2xl"
-                    >
-                      <FiPlay className="w-10 h-10 md:w-12 md:h-12 text-white ml-1" />
-                    </motion.div>
-                  </div>
-                </div>
-              )}
+              <video
+                ref={videoRef}
+                key={selectedVideo}
+                src={videos[selectedVideo].videoUrl}
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                preload="auto"
+              />
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 text-white">
-                {video.title}
+                {videos[selectedVideo].title}
               </h3>
               <p className="text-gray-300 text-sm sm:text-base">
-                {video.description}
+                {videos[selectedVideo].description}
               </p>
             </div>
           </div>
         </motion.div>
+
+        {/* Video Cards Grid */}
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 max-w-4xl mx-auto">
+          {videos.map((video, index) => (
+            <motion.div
+              key={video.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              onClick={() => setSelectedVideo(index)}
+              className={`relative rounded-lg overflow-hidden shadow-xl group cursor-pointer transition-all duration-300 ${
+                selectedVideo === index
+                  ? "ring-2 ring-[#DC2626] bg-[#DC2626]/10"
+                  : "bg-black/40 backdrop-blur-sm border border-white/10 hover:border-[#DC2626]/50"
+              }`}
+            >
+              <div className="relative aspect-video overflow-hidden">
+                <video
+                  src={video.videoUrl}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent" />
+                {selectedVideo === index && (
+                  <div className="absolute top-2 right-2 bg-[#DC2626] text-white px-2 py-1 rounded text-xs font-semibold">
+                    Playing
+                  </div>
+                )}
+              </div>
+              <div className="p-3 sm:p-4">
+                <h4 className="font-bold text-sm sm:text-base mb-1 text-white">
+                  {video.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-gray-400">
+                  {video.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
