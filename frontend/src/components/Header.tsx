@@ -45,7 +45,7 @@ export default function Header() {
       document.body.style.overflow = "";
       return;
     }
-    
+
     document.body.style.overflow = "hidden";
 
     const onKeyDown = (e: KeyboardEvent) => {
@@ -73,9 +73,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src={
-                  isScrolled ? "/images/EEM.png" : "/images/EEM-white.png"
-                }
+                src={isScrolled ? "/images/EEM.png" : "/images/EEM-white.png"}
                 alt="Energize Events Logo"
                 width={72}
                 height={72}

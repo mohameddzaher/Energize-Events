@@ -126,11 +126,11 @@ const Hero = () => {
                 <span className="relative z-10 flex items-center gap-2">
                   Our Work
                   <motion.span
-                    animate={{ rotate: [0, 15, -15, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
                     className="inline-block"
                   >
-                    ✨
+                    →
                   </motion.span>
                 </span>
               </motion.button>

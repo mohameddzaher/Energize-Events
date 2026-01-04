@@ -80,8 +80,8 @@ const Vision2030 = () => {
               </div>
               <div className="text-center p-3 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
                 <div className="flex justify-center mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/20 flex items-center justify-center">
-                    <FiAward className="w-4 h-4 text-green-400" />
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#DC2626]/20 to-red-600/20 flex items-center justify-center">
+                    <FiAward className="w-4 h-4 text-[#DC2626]" />
                   </div>
                 </div>
                 <h3 className="font-bold text-white text-[10px] sm:text-xs mb-1">
