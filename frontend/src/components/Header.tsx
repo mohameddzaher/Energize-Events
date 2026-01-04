@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -25,7 +25,7 @@ export default function Header() {
     []
   );
 
-  const isActive = (href: string) => pathname === href;
+  const isActive = useCallback((href: string) => pathname === href, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
@@ -35,13 +35,15 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsMenuOpen(false), 0);
-    return () => clearTimeout(timer);
+    setIsMenuOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    if (!isMenuOpen) return;
-    const prev = document.body.style.overflow;
+    if (!isMenuOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+    
     document.body.style.overflow = "hidden";
 
     const onKeyDown = (e: KeyboardEvent) => {
@@ -50,7 +52,7 @@ export default function Header() {
     window.addEventListener("keydown", onKeyDown);
 
     return () => {
-      document.body.style.overflow = prev;
+      document.body.style.overflow = "";
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [isMenuOpen]);
@@ -70,13 +72,14 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <Image
                 src={
-                  isScrolled ? "/images/EEM-Black.png" : "/images/EEM-white.png"
+                  isScrolled ? "/images/EEM.png" : "/images/EEM-white.png"
                 }
                 alt="Energize Events Logo"
                 width={72}
                 height={72}
-                className="w-18 h-16 md:w-38 md:h-20 object-contain transition-all duration-500"
+                className="w-18 h-16 md:w-34 md:h-18 object-contain transition-all duration-500"
                 priority
+                fetchPriority="high"
               />
             </Link>
           </div>
