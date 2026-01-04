@@ -10,6 +10,7 @@ import {
   FiTwitter,
   FiLinkedin,
 } from "react-icons/fi";
+import { FaYoutube, FaTiktok, FaSnapchat } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,24 +31,39 @@ const Footer = () => {
 
   const socialLinks = [
     {
+      icon: FiLinkedin,
+      href: "https://www.linkedin.com/company/energize-your-business/posts/?feedView=all",
+      label: "LinkedIn",
+    },
+    {
       icon: FiInstagram,
-      href: "https://linktr.ee/EnergizeBusKSA",
+      href: "https://www.instagram.com/energizebusksa/",
       label: "Instagram",
     },
     {
-      icon: FiFacebook,
-      href: "https://linktr.ee/EnergizeBusKSA",
-      label: "Facebook",
-    },
-    {
       icon: FiTwitter,
-      href: "https://linktr.ee/EnergizeBusKSA",
+      href: "https://x.com/EnergizeBusKSA",
       label: "Twitter",
     },
     {
-      icon: FiLinkedin,
-      href: "https://linktr.ee/EnergizeBusKSA",
-      label: "LinkedIn",
+      icon: FaSnapchat,
+      href: "https://www.snapchat.com/@energizebusksa?share_id=28aXYvansJY&locale=en-SA",
+      label: "Snapchat",
+    },
+    {
+      icon: FaTiktok,
+      href: "https://www.tiktok.com/@energizebusksa?_t=zs-90hk3beie2d&_r=1",
+      label: "TikTok",
+    },
+    {
+      icon: FiFacebook,
+      href: "https://www.facebook.com/EnergizeBusKSA",
+      label: "Facebook",
+    },
+    {
+      icon: FaYoutube,
+      href: "https://www.youtube.com/@EnergizeBusKSA",
+      label: "YouTube",
     },
   ];
 
@@ -83,7 +99,7 @@ const Footer = () => {
                   Creating unforgettable experiences through innovative event
                   management solutions. Elevate your events with our expertise.
                 </p>
-                <div className="flex space-x-3 sm:space-x-4 mb-3">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-2.5 mb-3">
                   {socialLinks.map((social, index) => {
                     const Icon = social.icon;
                     const socialColors: Record<string, string> = {
@@ -92,6 +108,9 @@ const Footer = () => {
                       Facebook: "hover:bg-blue-600",
                       Twitter: "hover:bg-sky-500",
                       LinkedIn: "hover:bg-blue-700",
+                      YouTube: "hover:bg-red-600",
+                      TikTok: "hover:bg-black",
+                      Snapchat: "hover:bg-yellow-400",
                     };
                     return (
                       <a
@@ -99,12 +118,12 @@ const Footer = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-10 h-10 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
+                        className={`w-8 h-8 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
                           socialColors[social.label] || "hover:bg-[#DC2626]"
                         }`}
                         aria-label={social.label}
                       >
-                        <Icon className="w-5 h-5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
+                        <Icon className="w-3.5 h-3.5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
                       </a>
                     );
                   })}
@@ -156,11 +175,17 @@ const Footer = () => {
               <h4 className="text-sm font-bold mb-4">Working Hours</h4>
               <div className="space-y-3">
                 <div className="flex flex-col items-center">
-                  <p className="text-gray-400 text-xs sm:text-sm font-medium">Sunday - Thursday</p>
-                  <p className="text-white text-xs sm:text-sm">9:00 AM - 6:00 PM</p>
+                  <p className="text-gray-400 text-xs sm:text-sm font-medium">
+                    Sunday - Thursday
+                  </p>
+                  <p className="text-white text-xs sm:text-sm">
+                    9:00 AM - 6:00 PM
+                  </p>
                 </div>
                 <div className="flex flex-col items-center pt-2 border-t border-white/10">
-                  <p className="text-gray-400 text-xs sm:text-sm font-medium">Friday - Saturday</p>
+                  <p className="text-gray-400 text-xs sm:text-sm font-medium">
+                    Friday - Saturday
+                  </p>
                   <p className="text-gray-500 text-xs sm:text-sm">Closed</p>
                 </div>
                 <Link
@@ -194,10 +219,10 @@ const Footer = () => {
                 <li className="flex items-start space-x-2 justify-center">
                   <FiPhone className="w-4 h-4 text-[#DC2626] mt-0.5 flex-shrink-0" />
                   <a
-                    href="tel:+966538486109"
+                    href="tel:0126825858"
                     className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
                   >
-                    +966 53 848 6109
+                    0126825858
                   </a>
                 </li>
                 <li className="flex items-start space-x-2 justify-center">
@@ -247,6 +272,27 @@ const Footer = () => {
                   </button>
                 </form>
               </div>
+            </div>
+          </motion.div>
+
+          {/* Vision 2030 Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10"
+          >
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/10 to-green-600/10 rounded-full mb-3 border border-white/10">
+                <span className="text-[#DC2626] font-semibold text-[10px] sm:text-xs">
+                  🇸🇦 Vision 2030
+                </span>
+              </div>
+              <p className="text-gray-400 text-[10px] sm:text-xs leading-relaxed">
+                Contributing to Saudi Arabia&apos;s Vision 2030 by creating world-class events
+                that showcase innovation, excellence, and cultural richness on the global stage.
+              </p>
             </div>
           </motion.div>
 
