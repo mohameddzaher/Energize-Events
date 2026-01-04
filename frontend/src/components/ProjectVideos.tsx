@@ -71,9 +71,9 @@ const ProjectVideos = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="mb-6 sm:mb-8"
+            className="mb-6 sm:mb-8 flex justify-center"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/50 border border-white/10">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/50 border border-white/10 w-full max-w-4xl">
               <div className="relative aspect-video bg-black">
                 <video
                   ref={videoRef}
