@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { FiRocket, FiAward, FiGlobe } from "react-icons/fi";
+import { FiZap, FiAward, FiGlobe } from "react-icons/fi";
 
 const Vision2030 = () => {
   const ref = useRef(null);
@@ -68,7 +68,7 @@ const Vision2030 = () => {
               <div className="text-center p-3 bg-gradient-to-br from-[#DC2626]/5 to-transparent rounded-lg">
                 <div className="flex justify-center mb-2">
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 flex items-center justify-center">
-                    <FiRocket className="w-4 h-4 text-[#DC2626]" />
+                    <FiZap className="w-4 h-4 text-[#DC2626]" />
                   </div>
                 </div>
                 <h3 className="font-bold text-gray-900 text-[10px] sm:text-xs mb-1">
