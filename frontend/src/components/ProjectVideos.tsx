@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectCoverflow } from "swiper/modules";
 import { FiPlay, FiVideo } from "react-icons/fi";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
@@ -14,7 +15,12 @@ const ProjectVideos = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [activeIndex, setActiveIndex] = useState(0);
-  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  const [playingVideo, setPlayingVideo] = useState<number | null>(0);
+
+  // Auto-play the first video when component mounts
+  useEffect(() => {
+    setPlayingVideo(0);
+  }, []);
 
   const videos = [
     {
@@ -22,18 +28,21 @@ const ProjectVideos = () => {
       title: "Event Showcase 1",
       description: "Our exceptional event management in action",
       embedUrl: "https://drive.google.com/file/d/1S_t4Nqu42C67h9OJhn6gTPw9trWzFntM/preview",
+      thumbnailUrl: "https://drive.google.com/thumbnail?id=1S_t4Nqu42C67h9OJhn6gTPw9trWzFntM&sz=w1920",
     },
     {
       id: "1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0",
       title: "Event Showcase 2",
       description: "Creating unforgettable experiences",
       embedUrl: "https://drive.google.com/file/d/1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0/preview",
+      thumbnailUrl: "https://drive.google.com/thumbnail?id=1J5yrcbC1ozT0Yx9DnM_X-CA_eHTUHVe0&sz=w1920",
     },
     {
       id: "14XRrAuUFYUMvDox3VDiZYo2GtyufjV3J",
       title: "Event Showcase 3",
       description: "World-class event production",
       embedUrl: "https://drive.google.com/file/d/14XRrAuUFYUMvDox3VDiZYo2GtyufjV3J/preview",
+      thumbnailUrl: "https://drive.google.com/thumbnail?id=14XRrAuUFYUMvDox3VDiZYo2GtyufjV3J&sz=w1920",
     },
   ];
 
@@ -88,7 +97,10 @@ const ProjectVideos = () => {
             }}
             navigation={true}
             loop={true}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            onSlideChange={(swiper) => {
+              setActiveIndex(swiper.realIndex);
+              setPlayingVideo(swiper.realIndex);
+            }}
             className="video-swiper"
             breakpoints={{
               640: {
@@ -118,31 +130,35 @@ const ProjectVideos = () => {
                     className="relative rounded-xl overflow-hidden shadow-2xl group"
                   >
                     <div className="relative aspect-video bg-black/50">
-                      {playingVideo === index ? (
+                      {isActive && playingVideo === index ? (
                         <iframe
-                          src={video.embedUrl}
+                          src={`${video.embedUrl}?autoplay=1&mute=1`}
                           className="w-full h-full"
-                          allow="autoplay; encrypted-media"
+                          allow="autoplay; encrypted-media; fullscreen"
                           allowFullScreen
                           title={video.title}
                         />
                       ) : (
                         <>
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/20 to-black/80 flex items-center justify-center">
-                            <div className="text-center">
-                              <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={() => setPlayingVideo(index)}
-                                className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#DC2626] flex items-center justify-center shadow-2xl group-hover:bg-red-700 transition-colors mb-3"
-                              >
-                                <FiPlay className="w-6 h-6 md:w-8 md:h-8 text-white ml-1" />
-                              </motion.button>
-                              <p className="text-white text-xs sm:text-sm font-medium">
-                                Click to Play
-                              </p>
+                          <Image
+                            src={video.thumbnailUrl}
+                            alt={video.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 60vw"
+                          />
+                          {!isActive && (
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/20 to-black/60 flex items-center justify-center">
+                              <div className="text-center">
+                                <motion.div
+                                  whileHover={{ scale: 1.1 }}
+                                  className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#DC2626] flex items-center justify-center shadow-2xl group-hover:bg-red-700 transition-colors mb-3"
+                                >
+                                  <FiPlay className="w-6 h-6 md:w-8 md:h-8 text-white ml-1" />
+                                </motion.div>
+                              </div>
                             </div>
-                          </div>
+                          )}
                           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-transparent to-transparent" />
                         </>
                       )}
@@ -174,28 +190,23 @@ const ProjectVideos = () => {
               className="relative rounded-lg overflow-hidden shadow-xl group cursor-pointer bg-black/40 backdrop-blur-sm border border-white/10"
               onClick={() => setPlayingVideo(playingVideo === index ? null : index)}
             >
-              <div className="relative aspect-video">
-                {playingVideo === index ? (
-                  <iframe
-                    src={video.embedUrl}
-                    className="w-full h-full"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    title={video.title}
-                  />
-                ) : (
-                  <>
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/30 to-black/70 flex items-center justify-center">
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#DC2626] flex items-center justify-center shadow-lg group-hover:bg-red-700 transition-colors"
-                      >
-                        <FiPlay className="w-5 h-5 md:w-6 md:h-6 text-white ml-1" />
-                      </motion.div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />
-                  </>
-                )}
+              <div className="relative aspect-video overflow-hidden">
+                <Image
+                  src={video.thumbnailUrl}
+                  alt={video.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/20 to-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#DC2626] flex items-center justify-center shadow-lg"
+                  >
+                    <FiPlay className="w-5 h-5 md:w-6 md:h-6 text-white ml-1" />
+                  </motion.div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent" />
               </div>
               <div className="p-3 sm:p-4">
                 <h4 className="font-bold text-sm sm:text-base mb-1 text-white">
