@@ -116,9 +116,9 @@ const Projects = () => {
             centeredSlides={true}
             slidesPerView="auto"
             coverflowEffect={{
-              rotate: 50,
+              rotate: 20,
               stretch: 0,
-              depth: 100,
+              depth: 50,
               modifier: 1,
               slideShadows: true,
             }}
@@ -141,8 +141,8 @@ const Projects = () => {
                     animate={
                       isInView
                         ? {
-                            opacity: index === activeIndex ? 1 : 0.4,
-                            scale: index === activeIndex ? 1 : 0.9,
+                            opacity: index === activeIndex ? 1 : 0.6,
+                            scale: index === activeIndex ? 1 : 0.85,
                           }
                         : {}
                     }
