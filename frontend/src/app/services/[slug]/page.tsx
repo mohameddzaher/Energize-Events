@@ -457,7 +457,7 @@ export default function ServiceDetailPage() {
                 onClick={() => router.push("/contact")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#DC2626] text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-red-700 transition-all shadow-md"
+                className="bg-[#DC2626] text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-red-700 transition-all shadow-md"
               >
                 Contact Us →
               </motion.button>

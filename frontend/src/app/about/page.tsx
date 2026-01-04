@@ -157,7 +157,7 @@ export default function AboutPage() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-white text-[#DC2626] px-6 py-3 rounded-full font-semibold text-xs sm:text-sm hover:bg-gray-100 transition-all cursor-pointer"
+                    className="bg-white text-[#DC2626] px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-gray-100 transition-all cursor-pointer"
                   >
                     Get in Touch
                   </motion.button>

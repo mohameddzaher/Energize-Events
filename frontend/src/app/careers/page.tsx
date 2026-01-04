@@ -258,7 +258,7 @@ export default function CareersPage() {
         </section>
 
         {/* Questions Section */}
-        <section className="relative py-8 sm:py-10 md:py-12 overflow-hidden">
+        <section className="relative py-6 sm:py-8 md:py-10 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920"
@@ -272,28 +272,28 @@ export default function CareersPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/90 via-[#0A0A0A]/85 to-[#0A0A0A]/90" />
           </div>
           <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-3xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="rounded-2xl p-8 sm:p-10 text-white"
+                className="rounded-xl p-5 sm:p-6 text-white"
               >
-                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-                  <FiMessageCircle className="w-8 h-8 text-white" />
+                <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-3">
+                  <FiMessageCircle className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3">
+                <h2 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2">
                   Still Have Questions?
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-200 mb-6 max-w-2xl mx-auto">
+                <p className="text-xs sm:text-sm text-gray-200 mb-4 max-w-xl mx-auto">
                   Our HR team is here to help. Feel free to reach out if you have any questions about our open positions or the application process.
                 </p>
                 <Link href="/contact">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-[#DC2626] text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-red-700 transition-all cursor-pointer inline-flex items-center gap-2"
+                    className="bg-[#DC2626] text-white px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm hover:bg-red-700 transition-all cursor-pointer inline-flex items-center gap-2"
                   >
                     <span>Contact HR</span>
                     <FiArrowRight className="w-4 h-4" />

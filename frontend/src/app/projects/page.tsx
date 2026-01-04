@@ -63,7 +63,7 @@ export default function ProjectsPage() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-[#DC2626] text-white px-6 py-3 rounded-full font-semibold text-xs sm:text-sm hover:bg-red-700 transition-all cursor-pointer inline-flex items-center gap-2"
+                    className="bg-[#DC2626] text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm hover:bg-red-700 transition-all cursor-pointer inline-flex items-center gap-2"
                   >
                     <span>Start Your Project</span>
                     <FiArrowRight className="w-4 h-4" />

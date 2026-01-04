@@ -71,14 +71,14 @@ const Newsletter = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-4 py-2.5 sm:py-3 rounded-full bg-white/95 backdrop-blur-sm border-2 border-white/30 text-[#0A0A0A] placeholder-gray-500 focus:outline-none focus:border-white/50 focus:bg-white transition-all text-xs sm:text-sm"
+                className="flex-1 px-4 py-2.5 sm:py-3 rounded-xl bg-white/95 backdrop-blur-sm border-2 border-white/30 text-[#0A0A0A] placeholder-gray-500 focus:outline-none focus:border-white/50 focus:bg-white transition-all text-xs sm:text-sm"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               />
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#DC2626] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold hover:bg-red-700 transition-all whitespace-nowrap text-xs sm:text-sm cursor-pointer"
+                className="bg-[#DC2626] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold hover:bg-red-700 transition-all whitespace-nowrap text-xs sm:text-sm cursor-pointer"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 {submitted ? "Subscribed!" : "Subscribe"}

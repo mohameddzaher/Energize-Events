@@ -130,7 +130,7 @@ export default function JobDetailPage() {
             <h1 className="text-2xl font-bold mb-4">Job Not Found</h1>
             <button
               onClick={() => router.push('/careers')}
-              className="bg-[#DC2626] text-white px-6 py-2 rounded-full"
+              className="bg-[#DC2626] text-white px-6 py-2 rounded-xl"
             >
               Back to Careers
             </button>
@@ -285,7 +285,7 @@ export default function JobDetailPage() {
                   href={`mailto:HR@energize-sa.com?subject=Application for ${job.title}&body=Dear HR Team,%0D%0A%0D%0AI am interested in applying for the ${job.title} position.%0D%0A%0D%0APlease find my application attached.%0D%0A%0D%0ABest regards`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 bg-white border-2 border-[#DC2626] text-[#DC2626] px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm hover:bg-[#DC2626] hover:text-white transition-all cursor-pointer mb-6"
+                  className="inline-flex items-center gap-2 bg-white border-2 border-[#DC2626] text-[#DC2626] px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm hover:bg-[#DC2626] hover:text-white transition-all cursor-pointer mb-6"
                 >
                   <FiMail className="w-4 h-4" />
                   <span>Send via Email to HR@energize-sa.com</span>
@@ -353,7 +353,7 @@ export default function JobDetailPage() {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-[#DC2626] text-white px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-all cursor-pointer"
+                    className="w-full bg-[#DC2626] text-white px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-all cursor-pointer"
                   >
                     <span>{submitted ? 'Application Submitted!' : 'Submit Application'}</span>
                     <FiSend className="w-4 h-4" />
