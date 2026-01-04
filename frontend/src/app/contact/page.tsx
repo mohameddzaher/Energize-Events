@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiClock, FiSend } from "react-icons/fi";
 import { FiInstagram, FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
+import { FaYoutube, FaTiktok, FaSnapchat } from "react-icons/fa";
 import Image from "next/image";
 
 export default function ContactPage() {
@@ -45,8 +46,8 @@ export default function ContactPage() {
     {
       icon: FiPhone,
       label: "Phone",
-      value: "+966 53 848 6109",
-      href: "tel:+966538486109",
+      value: "0126825858",
+      href: "tel:0126825858",
     },
     {
       icon: FiMapPin,
@@ -64,24 +65,39 @@ export default function ContactPage() {
 
   const socialLinks = [
     {
+      icon: FiLinkedin,
+      href: "https://www.linkedin.com/company/energize-your-business/posts/?feedView=all",
+      label: "LinkedIn",
+    },
+    {
       icon: FiInstagram,
-      href: "https://linktr.ee/EnergizeBusKSA",
+      href: "https://www.instagram.com/energizebusksa/",
       label: "Instagram",
     },
     {
-      icon: FiFacebook,
-      href: "https://linktr.ee/EnergizeBusKSA",
-      label: "Facebook",
-    },
-    {
       icon: FiTwitter,
-      href: "https://linktr.ee/EnergizeBusKSA",
+      href: "https://x.com/EnergizeBusKSA",
       label: "Twitter",
     },
     {
-      icon: FiLinkedin,
-      href: "https://linktr.ee/EnergizeBusKSA",
-      label: "LinkedIn",
+      icon: FaSnapchat,
+      href: "https://www.snapchat.com/@energizebusksa?share_id=28aXYvansJY&locale=en-SA",
+      label: "Snapchat",
+    },
+    {
+      icon: FaTiktok,
+      href: "https://www.tiktok.com/@energizebusksa?_t=zs-90hk3beie2d&_r=1",
+      label: "TikTok",
+    },
+    {
+      icon: FiFacebook,
+      href: "https://www.facebook.com/EnergizeBusKSA",
+      label: "Facebook",
+    },
+    {
+      icon: FaYoutube,
+      href: "https://www.youtube.com/@EnergizeBusKSA",
+      label: "YouTube",
     },
   ];
 
@@ -246,27 +262,30 @@ export default function ContactPage() {
                   <div className="flex gap-3">
                     {socialLinks.map((social, index) => {
                       const Icon = social.icon;
-                      const socialColors: Record<string, string> = {
-                        Instagram:
-                          "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
-                        Facebook: "hover:bg-blue-600",
-                        Twitter: "hover:bg-sky-500",
-                        LinkedIn: "hover:bg-blue-700",
-                      };
-                      return (
-                        <a
-                          key={index}
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`w-10 h-10 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
-                            socialColors[social.label] || "hover:bg-[#DC2626]"
-                          }`}
-                          aria-label={social.label}
-                        >
-                          <Icon className="w-5 h-5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
-                        </a>
-                      );
+                    const socialColors: Record<string, string> = {
+                      Instagram:
+                        "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
+                      Facebook: "hover:bg-blue-600",
+                      Twitter: "hover:bg-sky-500",
+                      LinkedIn: "hover:bg-blue-700",
+                      YouTube: "hover:bg-red-600",
+                      TikTok: "hover:bg-black",
+                      Snapchat: "hover:bg-yellow-400",
+                    };
+                    return (
+                      <a
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-8 h-8 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
+                          socialColors[social.label] || "hover:bg-[#DC2626]"
+                        }`}
+                        aria-label={social.label}
+                      >
+                        <Icon className="w-3.5 h-3.5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
+                      </a>
+                    );
                     })}
                   </div>
                   <p className="mt-3 text-gray-600 text-xs">

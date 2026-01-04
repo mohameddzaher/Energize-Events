@@ -30,8 +30,8 @@ const ContactMap = () => {
     {
       icon: FiPhone,
       title: "Phone",
-      value: "+966 53 848 6109",
-      href: "tel:+966538486109",
+      value: "0126825858",
+      href: "tel:0126825858",
     },
     {
       icon: FiMapPin,
