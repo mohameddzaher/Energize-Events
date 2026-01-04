@@ -116,11 +116,11 @@ const Projects = () => {
             centeredSlides={true}
             slidesPerView="auto"
             coverflowEffect={{
-              rotate: 15,
+              rotate: 50,
               stretch: 0,
-              depth: 30,
+              depth: 100,
               modifier: 1,
-              slideShadows: false,
+              slideShadows: true,
             }}
             autoplay={{
               delay: 4000,
@@ -160,11 +160,13 @@ const Projects = () => {
                         loading="lazy"
                         sizes="(max-width: 640px) 85vw, (max-width: 768px) 75vw, (max-width: 1024px) 65vw, 55vw"
                       />
-                      <div className={`absolute inset-0 bg-gradient-to-t ${
-                        index === activeIndex 
-                          ? "from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-transparent" 
-                          : "from-transparent via-transparent to-transparent"
-                      }`} />
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-t ${
+                          index === activeIndex
+                            ? "from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-transparent"
+                            : "from-transparent via-transparent to-transparent"
+                        }`}
+                      />
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-5">
                       <span className="text-[#DC2626] font-semibold text-xs mb-1 block">
