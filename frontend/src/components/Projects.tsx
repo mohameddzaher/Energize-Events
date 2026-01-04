@@ -95,9 +95,7 @@ const Projects = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DC2626]/10 rounded-full mb-2">
             <div className="w-1.5 h-1.5 bg-[#DC2626] rounded-full animate-pulse" />
-            <span className="text-[#DC2626] font-medium text-xs">
-              PROJECTS
-            </span>
+            <span className="text-[#DC2626] font-medium text-xs">PROJECTS</span>
           </div>
           <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#0A0A0A] mb-2">
             Our Recent Work
@@ -119,11 +117,11 @@ const Projects = () => {
             centeredSlides={true}
             slidesPerView="auto"
             coverflowEffect={{
-              rotate: 50,
+              rotate: 35,
               stretch: 0,
-              depth: 100,
+              depth: 120,
               modifier: 1,
-              slideShadows: true,
+              slideShadows: false,
             }}
             autoplay={{
               delay: 4000,
@@ -136,7 +134,7 @@ const Projects = () => {
             {projects.map((project, index) => (
               <SwiperSlide
                 key={index}
-                className="!w-[85%] sm:!w-[75%] md:!w-[65%] lg:!w-[55%]"
+                className="!w-[80%] md:!w-[60%] lg:!w-[50%]"
               >
                 <Link href={`/projects/${project.slug}`}>
                   <motion.div
