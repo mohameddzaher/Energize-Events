@@ -131,7 +131,9 @@ const Projects = () => {
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             className="projects-swiper"
           >
-            {projects.map((project, index) => (
+            {projects.map((project, index) => {
+              const isActive = index === activeIndex;
+              return (
               <SwiperSlide
                 key={index}
                 className="!w-[80%] md:!w-[60%] lg:!w-[50%]"
@@ -139,8 +141,8 @@ const Projects = () => {
                 <Link href={`/projects/${project.slug}`}>
                   <motion.div
                     animate={{
-                      scale: index === activeIndex ? 1 : 0.9,
-                      opacity: index === activeIndex ? 1 : 0.8,
+                      scale: isActive ? 1 : 0.9,
+                      opacity: isActive ? 1 : 0.8,
                     }}
                     transition={{ duration: 0.4 }}
                     className="relative rounded-xl overflow-hidden shadow-xl cursor-pointer group"
@@ -170,7 +172,8 @@ const Projects = () => {
                   </motion.div>
                 </Link>
               </SwiperSlide>
-            ))}
+              );
+            })}
           </Swiper>
         </div>
 
