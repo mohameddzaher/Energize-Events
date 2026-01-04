@@ -88,7 +88,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-3 py-1.5 rounded-md transition-all duration-200 text-[10px] sm:text-[13px] ${
+                    className={`px-3 py-1.5 rounded-md transition-all duration-200 text-[10px] sm:text-[11px] ${
                       active ? "font-bold" : "font-medium"
                     } ${
                       isScrolled
@@ -96,8 +96,8 @@ export default function Header() {
                           ? "text-[#DC2626] bg-[#DC2626]/10"
                           : "text-gray-700 hover:text-[#DC2626] hover:bg-gray-100"
                         : active
-                        ? "text-[#DC2626] bg-[#DC2626]/10"
-                        : "text-gray-700 hover:text-[#DC2626] hover:bg-gray-100"
+                        ? "text-white bg-white/20"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
                     }`}
                   >
                     {item.name}
