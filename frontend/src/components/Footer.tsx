@@ -70,7 +70,7 @@ const Footer = () => {
 
       <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-10 sm:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-6 sm:mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 mb-6 sm:mb-8">
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <motion.div
@@ -218,6 +218,29 @@ const Footer = () => {
                     Raihanat Al Jazirah, Jeddah
                   </a>
                 </li>
+              </ul>
+            </motion.div>
+
+            {/* Resources */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center"
+            >
+              <h4 className="text-sm font-bold mb-4">Resources</h4>
+              <ul className="space-y-2">
+                {footerLinks.resources.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </motion.div>
           </div>
