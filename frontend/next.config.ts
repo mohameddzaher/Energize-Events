@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['framer-motion', 'react-icons', 'swiper'],
     optimizeCss: true,
   },
+  // Performance optimizations
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
   // Security headers
   async headers() {
     return [
