@@ -215,7 +215,6 @@ const Footer = () => {
                 </li>
               </ul>
             </motion.div>
-
           </div>
 
           {/* Creative Section */}
@@ -229,9 +228,12 @@ const Footer = () => {
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
               {/* Newsletter Section */}
               <div className="bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 rounded-xl p-6 sm:p-8 border border-white/10">
-                <h4 className="text-sm font-bold mb-3 text-white">Stay Updated</h4>
+                <h4 className="text-sm font-bold mb-3 text-white">
+                  Stay Updated
+                </h4>
                 <p className="text-gray-400 text-xs sm:text-sm mb-4">
-                  Subscribe to our newsletter for the latest event insights and updates.
+                  Subscribe to our newsletter for the latest event insights and
+                  updates.
                 </p>
                 <form className="flex gap-2">
                   <input
@@ -250,7 +252,9 @@ const Footer = () => {
 
               {/* Quick Links & Social */}
               <div className="bg-gradient-to-br from-white/5 to-white/0 rounded-xl p-6 sm:p-8 border border-white/10">
-                <h4 className="text-sm font-bold mb-4 text-white">Quick Links</h4>
+                <h4 className="text-sm font-bold mb-4 text-white">
+                  Quick Links
+                </h4>
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <Link
                     href="/blog"
