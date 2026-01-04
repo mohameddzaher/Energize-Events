@@ -73,7 +73,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src={isScrolled ? "/images/EEM.png" : "/images/EEM-white.png"}
+                src={isScrolled ? "/images/EEM-Black.png" : "/images/EEM-white.png"}
                 alt="Energize Events Logo"
                 width={72}
                 height={72}

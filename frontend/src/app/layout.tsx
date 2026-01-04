@@ -79,11 +79,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/EEM.png", sizes: "32x32", type: "image/png" },
-      { url: "/images/EEM.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/EEM-Black.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/EEM-Black.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
-      { url: "/images/EEM.png", sizes: "180x180", type: "image/png" },
+      { url: "/images/EEM-Black.png", sizes: "180x180", type: "image/png" },
     ],
   },
   manifest: "/manifest.json",
@@ -113,7 +113,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "Energize Events",
     url: "https://energize-events.com",
-    logo: "https://energize-events.com/images/EEM.png",
+    logo: "https://energize-events.com/images/EEM-Black.png",
     description:
       "Premier event management company in Jeddah, Saudi Arabia specializing in conferences, corporate events, exhibitions, and entertainment events.",
     address: {
