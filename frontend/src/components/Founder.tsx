@@ -187,10 +187,16 @@ const Founder = () => {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  whileHover={{ y: -3, scale: 1.02 }}
+                  initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ 
+                    delay: 0.5 + index * 0.12, 
+                    duration: 0.6,
+                    type: "spring",
+                    stiffness: 120
+                  }}
+                  whileHover={{ y: -8, scale: 1.08, rotate: 2 }}
                   className="bg-white rounded-lg p-3 sm:p-4 shadow-sm hover:shadow-md transition-all border border-gray-100"
                 >
                   <div className="flex flex-col items-center text-center">
