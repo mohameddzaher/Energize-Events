@@ -126,14 +126,16 @@ const Clients = () => {
           {clients.map((client, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{
                   delay: index * 0.05,
-                  duration: 0.5,
-                  ease: "easeOut",
+                  duration: 0.6,
+                  type: "spring",
+                  stiffness: 100,
                 }}
-                whileHover={{ scale: 1.15, y: -5 }}
+                whileHover={{ scale: 1.2, y: -8, rotate: 5 }}
                 className="flex items-center justify-center h-20 sm:h-24 md:h-28 grayscale hover:grayscale-0 transition-all duration-500 p-4 bg-white/5 rounded-lg hover:bg-white/10 backdrop-blur-sm cursor-pointer"
               >
                 <Image
