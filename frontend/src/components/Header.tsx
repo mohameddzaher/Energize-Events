@@ -34,8 +34,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close menu when route changes
   useEffect(() => {
-    setIsMenuOpen(false);
+    const timer = setTimeout(() => setIsMenuOpen(false), 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   useEffect(() => {
