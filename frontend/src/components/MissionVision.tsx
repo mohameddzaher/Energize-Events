@@ -29,13 +29,13 @@ const MissionVision = () => {
 
       <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Mission Section */}
-        <motion.div
-          ref={missionRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={missionInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-6 sm:mb-8"
-        >
+            <motion.div
+              ref={missionRef}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={missionInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
+              className="mb-6 sm:mb-8"
+            >
           <div className="grid md:grid-cols-2 gap-5 md:gap-6 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -95,12 +95,12 @@ const MissionVision = () => {
         </div>
 
         {/* Vision Section */}
-        <motion.div
-          ref={visionRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={visionInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+            <motion.div
+              ref={visionRef}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={visionInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
+            >
           <div className="grid md:grid-cols-2 gap-5 md:gap-6 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
