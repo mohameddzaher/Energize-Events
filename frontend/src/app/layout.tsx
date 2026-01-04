@@ -15,14 +15,21 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://energize-events.com'),
+  metadataBase: new URL("https://energize-events.com"),
   title: {
     default: "Energize Events - Event Management Company",
-    template: "%s | Energize Events"
+    template: "%s | Energize Events",
   },
   description:
     "Professional event management services - conferences, workshops, and unforgettable experiences",
-  keywords: ["event management", "conferences", "workshops", "corporate events", "Saudi Arabia", "Jeddah"],
+  keywords: [
+    "event management",
+    "conferences",
+    "workshops",
+    "corporate events",
+    "Saudi Arabia",
+    "Jeddah",
+  ],
   authors: [{ name: "Energize Events" }],
   creator: "Energize Events",
   publisher: "Energize Events",
@@ -37,7 +44,8 @@ export const metadata: Metadata = {
     url: "https://energize-events.com",
     siteName: "Energize Events",
     title: "Energize Events - Event Management Company",
-    description: "Professional event management services - conferences, workshops, and unforgettable experiences",
+    description:
+      "Professional event management services - conferences, workshops, and unforgettable experiences",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -50,7 +58,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Energize Events - Event Management Company",
-    description: "Professional event management services - conferences, workshops, and unforgettable experiences",
+    description:
+      "Professional event management services - conferences, workshops, and unforgettable experiences",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -59,9 +68,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {

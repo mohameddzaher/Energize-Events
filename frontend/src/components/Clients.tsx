@@ -90,7 +90,7 @@ const Clients = () => {
             Trusted by Leading Companies
           </h2>
           <p className="text-sm sm:text-base text-gray-300">
-            Their trust is our strength - Company logos
+            Their trust is our strength
           </p>
         </motion.div>
 
