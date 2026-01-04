@@ -180,6 +180,7 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
+                      aria-label="Select Subject"
                       className="w-full px-4 py-2.5 rounded-xl border-2 border-gray-200 focus:border-[#DC2626] focus:outline-none transition-all text-xs sm:text-sm cursor-pointer"
                     >
                       <option value="">Select Subject</option>
