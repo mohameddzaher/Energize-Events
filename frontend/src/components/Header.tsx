@@ -57,10 +57,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50"
-          : "bg-white/90 backdrop-blur-md"
+          : "bg-gradient-to-r from-[#DC2626]/10 via-red-600/5 to-[#DC2626]/10 backdrop-blur-md border-b border-white/10"
       }`}
     >
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-12">
@@ -88,7 +88,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-3 py-1.5 rounded-md transition-all duration-200 text-[10px] sm:text-[11px] ${
+                    className={`px-3 py-1.5 rounded-md transition-all duration-200 text-[10px] sm:text-[13px] ${
                       active ? "font-bold" : "font-medium"
                     } ${
                       isScrolled
@@ -111,7 +111,11 @@ export default function Header() {
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
-              className="hidden lg:inline-flex px-4 py-1.5 rounded-md transition-all duration-300 text-[10px] sm:text-[11px] font-semibold bg-[#DC2626] text-white hover:bg-red-700 shadow-sm hover:shadow-md"
+              className={`hidden lg:inline-flex px-4 py-1.5 rounded-md transition-all duration-300 text-[10px] sm:text-[11px] font-semibold shadow-sm hover:shadow-md ${
+                isScrolled
+                  ? "bg-[#DC2626] text-white hover:bg-red-700"
+                  : "bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30"
+              }`}
             >
               Contact
             </Link>
@@ -121,7 +125,7 @@ export default function Header() {
               className={`lg:hidden p-2 rounded-md transition-colors ${
                 isScrolled
                   ? "text-gray-700 hover:bg-gray-100"
-                  : "text-gray-700 hover:bg-gray-100"
+                  : "text-white hover:bg-white/10"
               }`}
               aria-label="Toggle menu"
             >
