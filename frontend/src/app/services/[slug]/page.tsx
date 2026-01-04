@@ -342,8 +342,6 @@ export default function ServiceDetailPage() {
     );
   }
 
-  const Icon = service.icon;
-
   return (
     <div className="App">
       <Header />
