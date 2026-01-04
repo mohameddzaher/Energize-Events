@@ -42,25 +42,21 @@ const Footer = () => {
       icon: FiInstagram,
       href: "https://linktr.ee/EnergizeBusKSA",
       label: "Instagram",
-      color: "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
     },
     {
       icon: FiFacebook,
       href: "https://linktr.ee/EnergizeBusKSA",
       label: "Facebook",
-      color: "hover:bg-blue-600",
     },
     {
       icon: FiTwitter,
       href: "https://linktr.ee/EnergizeBusKSA",
       label: "Twitter",
-      color: "hover:bg-sky-500",
     },
     {
       icon: FiLinkedin,
       href: "https://linktr.ee/EnergizeBusKSA",
       label: "LinkedIn",
-      color: "hover:bg-blue-700",
     },
   ];
 
@@ -84,7 +80,7 @@ const Footer = () => {
               >
                 <div className="flex items-center space-x-3 mb-4">
                   <Image
-                    src="/images/EEM.png"
+                    src="/images/EEM-white.png"
                     alt="Energize Events Logo"
                     width={100}
                     height={100}
@@ -99,13 +95,20 @@ const Footer = () => {
                 <div className="flex space-x-3 sm:space-x-4 mb-3">
                   {socialLinks.map((social, index) => {
                     const Icon = social.icon;
+                    const socialColors: Record<string, string> = {
+                      Instagram:
+                        " hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white",
+                      Facebook: "hover:bg-blue-600 hover:text-white",
+                      Twitter: "hover:bg-sky-500 hover:text-white",
+                      LinkedIn: "hover:bg-blue-700 hover:text-white",
+                    };
                     return (
                       <a
                         key={index}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-10 h-10 rounded-full bg-white/10 flex items-center justify-center transition-colors duration-300 cursor-pointer ${social.color}`}
+                        className={`w-10 h-10 rounded-full bg-white/10 flex items-center justify-center transition-colors duration-300 cursor-pointer ${socialColors[social.label] || ""}`}
                         aria-label={social.label}
                       >
                         <Icon className="w-5 h-5 text-white transition-colors duration-300" />
