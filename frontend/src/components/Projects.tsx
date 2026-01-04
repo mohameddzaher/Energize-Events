@@ -129,6 +129,9 @@ const Projects = () => {
             loop={true}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             className="projects-swiper"
+            style={{
+              '--swiper-slide-opacity': '0.05',
+            } as React.CSSProperties}
           >
             {projects.map((project, index) => (
               <SwiperSlide
@@ -141,7 +144,7 @@ const Projects = () => {
                     animate={
                       isInView
                         ? {
-                            opacity: index === activeIndex ? 1 : 0.7,
+                            opacity: index === activeIndex ? 1 : 0.05,
                             scale: index === activeIndex ? 1 : 0.9,
                           }
                         : {}
