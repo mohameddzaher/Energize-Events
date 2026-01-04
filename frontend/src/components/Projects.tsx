@@ -134,44 +134,44 @@ const Projects = () => {
             {projects.map((project, index) => {
               const isActive = index === activeIndex;
               return (
-              <SwiperSlide
-                key={index}
-                className="!w-[80%] md:!w-[60%] lg:!w-[50%]"
-              >
-                <Link href={`/projects/${project.slug}`}>
-                  <motion.div
-                    animate={{
-                      scale: isActive ? 1 : 0.9,
-                      opacity: isActive ? 1 : 0.8,
-                    }}
-                    transition={{ duration: 0.4 }}
-                    className="relative rounded-xl overflow-hidden shadow-xl cursor-pointer group"
-                  >
-                    <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                        loading="lazy"
-                        sizes="(max-width: 640px) 85vw, (max-width: 768px) 75vw, (max-width: 1024px) 65vw, 55vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-transparent" />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-5">
-                      <span className="text-[#DC2626] font-semibold text-xs mb-1 block">
-                        {project.category}
-                      </span>
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-white">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-300 text-xs">
-                        {project.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                </Link>
-              </SwiperSlide>
+                <SwiperSlide
+                  key={index}
+                  className="!w-[80%] md:!w-[60%] lg:!w-[50%]"
+                >
+                  <Link href={`/projects/${project.slug}`}>
+                    <motion.div
+                      animate={{
+                        scale: isActive ? 1 : 0.9,
+                        opacity: isActive ? 1 : 0.8,
+                      }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="relative rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+                    >
+                      <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                          loading="lazy"
+                          sizes="(max-width: 640px) 85vw, (max-width: 768px) 75vw, (max-width: 1024px) 65vw, 55vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/50 to-transparent" />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-5">
+                        <span className="text-[#DC2626] font-semibold text-xs mb-1 block">
+                          {project.category}
+                        </span>
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-white">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-300 text-xs">
+                          {project.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </SwiperSlide>
               );
             })}
           </Swiper>

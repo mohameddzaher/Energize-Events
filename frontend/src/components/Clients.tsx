@@ -133,7 +133,7 @@ const Clients = () => {
                   duration: 0.5,
                   ease: "easeOut",
                 }}
-                whileHover={{ scale: 1.15, y: -5 }}
+                whileHover={{ scale: 1.05, y: -5 }}
                 className="flex items-center justify-center h-20 sm:h-24 md:h-28 grayscale hover:grayscale-0 transition-all duration-500 p-4 bg-white/5 rounded-lg hover:bg-white/10 backdrop-blur-sm cursor-pointer"
               >
                 <Image

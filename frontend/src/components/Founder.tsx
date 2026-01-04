@@ -154,7 +154,7 @@ const Founder = () => {
         >
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/5 to-red-600/5 rounded-full">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/5 to-red-600/5 rounded-xl">
                 <FaLightbulb className="w-3.5 h-3.5 text-[#DC2626]" />
                 <span className="text-[#DC2626] font-medium text-xs">
                   Leadership Profile
@@ -251,17 +251,17 @@ const Founder = () => {
           className="mt-6 sm:mt-8"
         >
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-            <div className="px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/10 to-red-600/10 rounded-full border border-[#DC2626]/20">
+            <div className="px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/10 to-red-600/10 rounded-xl border border-[#DC2626]/20">
               <span className="text-[#DC2626] text-xs font-medium">
                 500+ Projects
               </span>
             </div>
-            <div className="px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/10 to-red-600/10 rounded-full border border-[#DC2626]/20">
+            <div className="px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/10 to-red-600/10 rounded-xl border border-[#DC2626]/20">
               <span className="text-[#DC2626] text-xs font-medium">
                 MENA Region
               </span>
             </div>
-            <div className="px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/10 to-red-600/10 rounded-full border border-[#DC2626]/20">
+            <div className="px-3 py-1.5 bg-gradient-to-r from-[#DC2626]/10 to-red-600/10 rounded-xl border border-[#DC2626]/20">
               <span className="text-[#DC2626] text-xs font-medium">
                 6+ Awards
               </span>

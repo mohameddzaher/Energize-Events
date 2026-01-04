@@ -90,6 +90,7 @@ body::-webkit-scrollbar {
 .team-swiper .swiper-button-prev {
   color: #dc2626;
   background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   width: 50px;
   height: 50px;
@@ -111,10 +112,6 @@ body::-webkit-scrollbar {
 
 .team-swiper .swiper-button-disabled {
   opacity: 0.3;
-}
-
-.projects-swiper {
-  padding-bottom: 50px;
 }
 
 .projects-swiper {
