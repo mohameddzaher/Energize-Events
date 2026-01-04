@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { FiVideo } from "react-icons/fi";
+import { FiVideo, FiPlay } from "react-icons/fi";
 
 const ProjectVideos = () => {
   const ref = useRef(null);
@@ -51,7 +51,7 @@ const ProjectVideos = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-6 sm:mb-8"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DC2626]/20 rounded-full mb-3 border border-[#DC2626]/30">
             <FiVideo className="w-3.5 h-3.5 text-[#DC2626]" />
@@ -65,80 +65,99 @@ const ProjectVideos = () => {
           </p>
         </motion.div>
 
-        {/* Main Video Player */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-8 sm:mb-10 max-w-5xl mx-auto"
-        >
-          <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black/50 border border-white/10">
-            <div className="relative aspect-video bg-black">
-              <video
-                ref={videoRef}
-                key={selectedVideo}
-                src={videos[selectedVideo].videoUrl}
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls
-                preload="auto"
-              />
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 text-white">
-                {videos[selectedVideo].title}
-              </h3>
-              <p className="text-gray-300 text-sm sm:text-base">
-                {videos[selectedVideo].description}
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Video Cards Grid */}
-        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 max-w-4xl mx-auto">
-          {videos.map((video, index) => (
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+            {/* Main Video Player - Smaller */}
             <motion.div
-              key={video.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 + index * 0.1, duration: 0.6 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              onClick={() => setSelectedVideo(index)}
-              className={`relative rounded-lg overflow-hidden shadow-xl group cursor-pointer transition-all duration-300 ${
-                selectedVideo === index
-                  ? "ring-2 ring-[#DC2626] bg-[#DC2626]/10"
-                  : "bg-black/40 backdrop-blur-sm border border-white/10 hover:border-[#DC2626]/50"
-              }`}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-2"
             >
-              <div className="relative aspect-video overflow-hidden">
-                <video
-                  src={video.videoUrl}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  muted
-                  loop
-                  playsInline
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent" />
-                {selectedVideo === index && (
-                  <div className="absolute top-2 right-2 bg-[#DC2626] text-white px-2 py-1 rounded text-xs font-semibold">
-                    Playing
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black/50 border border-white/10 group">
+                <div className="relative aspect-video bg-black">
+                  <video
+                    ref={videoRef}
+                    key={selectedVideo}
+                    src={videos[selectedVideo].videoUrl}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                    preload="auto"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent pointer-events-none" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/95 to-transparent">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-2 h-2 bg-[#DC2626] rounded-full animate-pulse" />
+                    <span className="text-[#DC2626] text-xs font-semibold">LIVE</span>
                   </div>
-                )}
-              </div>
-              <div className="p-3 sm:p-4">
-                <h4 className="font-bold text-sm sm:text-base mb-1 text-white">
-                  {video.title}
-                </h4>
-                <p className="text-xs sm:text-sm text-gray-400">
-                  {video.description}
-                </p>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 text-white">
+                    {videos[selectedVideo].title}
+                  </h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">
+                    {videos[selectedVideo].description}
+                  </p>
+                </div>
               </div>
             </motion.div>
-          ))}
+
+            {/* Video Cards Sidebar */}
+            <div className="flex flex-col gap-4 sm:gap-5">
+              {videos.map((video, index) => (
+                <motion.div
+                  key={video.id}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
+                  whileHover={{ x: -4, scale: 1.02 }}
+                  onClick={() => setSelectedVideo(index)}
+                  className={`relative rounded-xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-300 flex-1 ${
+                    selectedVideo === index
+                      ? "ring-2 ring-[#DC2626] bg-[#DC2626]/10 scale-105"
+                      : "bg-black/40 backdrop-blur-sm border border-white/10 hover:border-[#DC2626]/50"
+                  }`}
+                >
+                  <div className="relative aspect-video overflow-hidden">
+                    <video
+                      src={video.videoUrl}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      muted
+                      loop
+                      playsInline
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/10 to-black/40 group-hover:from-[#DC2626]/20 transition-colors" />
+                    {selectedVideo === index && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-[#DC2626]/20">
+                        <motion.div
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ repeat: Infinity, duration: 2 }}
+                          className="w-10 h-10 rounded-full bg-[#DC2626] flex items-center justify-center shadow-xl"
+                        >
+                          <FiPlay className="w-5 h-5 text-white ml-0.5" />
+                        </motion.div>
+                      </div>
+                    )}
+                    <div className="absolute top-2 left-2 bg-[#DC2626] text-white px-2 py-0.5 rounded text-[10px] font-semibold">
+                      {index + 1}
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-transparent to-transparent" />
+                  </div>
+                  <div className="p-3 sm:p-4">
+                    <h4 className="font-bold text-sm mb-1 text-white line-clamp-1">
+                      {video.title}
+                    </h4>
+                    <p className="text-xs text-gray-400 line-clamp-2">
+                      {video.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
