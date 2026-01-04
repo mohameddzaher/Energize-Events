@@ -26,12 +26,6 @@ const Footer = () => {
       { name: "Careers", href: "/careers" },
       { name: "Contact", href: "/contact" },
     ],
-    services: [
-      { name: "Conferences & Seminars", href: "/services" },
-      { name: "Commercial Exhibitions", href: "/services" },
-      { name: "Event Activation", href: "/services" },
-      { name: "Technology & Production", href: "/services" },
-    ],
   };
 
   const socialLinks = [
@@ -151,7 +145,7 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            {/* Services Links */}
+            {/* Working Hours */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -159,19 +153,23 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center"
             >
-              <h4 className="text-sm font-bold mb-4">Services</h4>
-              <ul className="space-y-2">
-                {footerLinks.services.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <h4 className="text-sm font-bold mb-4">Working Hours</h4>
+              <div className="space-y-3">
+                <div className="flex flex-col items-center">
+                  <p className="text-gray-400 text-xs sm:text-sm font-medium">Sunday - Thursday</p>
+                  <p className="text-white text-xs sm:text-sm">9:00 AM - 6:00 PM</p>
+                </div>
+                <div className="flex flex-col items-center pt-2 border-t border-white/10">
+                  <p className="text-gray-400 text-xs sm:text-sm font-medium">Friday - Saturday</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">Closed</p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-block mt-3 px-4 py-2 bg-[#DC2626]/20 hover:bg-[#DC2626] text-white rounded-lg transition-colors text-xs sm:text-sm font-semibold cursor-pointer border border-[#DC2626]/30"
+                >
+                  Book Appointment
+                </Link>
+              </div>
             </motion.div>
 
             {/* Contact Info */}
@@ -225,10 +223,12 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/10"
           >
-            <div className="max-w-2xl mx-auto bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 rounded-xl p-4 sm:p-6 border border-white/10">
+            <div className="max-w-2xl mx-auto bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 rounded-xl p-4 sm:p-6 border border-white/10 mb-8">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-center sm:text-left">
-                  <h4 className="text-xs sm:text-sm font-bold mb-1 text-white">Stay Updated</h4>
+                  <h4 className="text-xs sm:text-sm font-bold mb-1 text-white">
+                    Stay Updated
+                  </h4>
                   <p className="text-gray-400 text-[10px] sm:text-xs">
                     Get the latest event insights delivered to your inbox
                   </p>
