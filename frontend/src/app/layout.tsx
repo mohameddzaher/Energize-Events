@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth hide-scrollbar">
-      <body className={`${inter.variable} ${playfair.variable} antialiased hide-scrollbar`}>
+      <body
+        className={`${inter.variable} ${playfair.variable} antialiased hide-scrollbar`}
+      >
         {children}
       </body>
     </html>
