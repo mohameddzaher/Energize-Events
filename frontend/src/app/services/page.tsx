@@ -101,20 +101,32 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-8 sm:py-10 md:py-12 bg-white">
-          <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <section className="relative py-8 sm:py-10 md:py-12 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1920"
+              alt="CTA Background"
+              fill
+              className="object-cover"
+              loading="lazy"
+              sizes="100vw"
+              quality={60}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/90 via-[#0A0A0A]/85 to-[#0A0A0A]/90" />
+          </div>
+          <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-4xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-gradient-to-br from-[#DC2626] to-red-700 rounded-2xl p-8 sm:p-10 text-white"
+                className="rounded-2xl p-8 sm:p-10 text-white"
               >
                 <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-3">
                   Ready to Start Your Event?
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-100 mb-6 max-w-2xl mx-auto">
+                <p className="text-xs sm:text-sm text-gray-200 mb-6 max-w-2xl mx-auto">
                   Let&apos;s discuss how we can help make your next event unforgettable.
                 </p>
                 <Link href="/contact">
