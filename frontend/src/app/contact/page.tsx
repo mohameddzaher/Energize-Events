@@ -195,7 +195,7 @@ export default function ContactPage() {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-[#DC2626] text-white px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-all cursor-pointer"
+                    className="w-full bg-red-900 text-white px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-all cursor-pointer"
                   >
                     <span>{submitted ? "Message Sent!" : "Send Message"}</span>
                     <FiSend className="w-4 h-4" />

@@ -230,7 +230,7 @@ const Services = () => {
                   boxShadow: "0 10px 25px -5px rgba(220, 38, 38, 0.3)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 bg-[#DC2626] text-white px-5 py-2 rounded-full font-semibold text-xs hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 bg-[#DC2626] text-white px-5 py-2 rounded-xl font-semibold text-xs hover:bg-red-700 transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 <span>View All Services</span>
                 <span className="text-base transform group-hover:translate-x-1 transition-transform">
