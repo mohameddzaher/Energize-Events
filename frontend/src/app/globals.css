@@ -58,6 +58,18 @@ body::-webkit-scrollbar {
   height: 0 !important;
 }
 
+/* Additional class to ensure scrollbar is hidden */
+.hide-scrollbar {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
 .text-gradient {
   background: linear-gradient(to right, #dc2626, #b91c1c);
   -webkit-background-clip: text;
