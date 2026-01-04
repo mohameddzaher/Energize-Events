@@ -138,16 +138,11 @@ const Projects = () => {
               >
                 <Link href={`/projects/${project.slug}`}>
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={
-                      isInView
-                        ? {
-                            opacity: index === activeIndex ? 1 : 0.8,
-                            scale: index === activeIndex ? 1 : 0.9,
-                          }
-                        : {}
-                    }
-                    transition={{ duration: 0.5 }}
+                    animate={{
+                      scale: index === activeIndex ? 1 : 0.9,
+                      opacity: index === activeIndex ? 1 : 0.8,
+                    }}
+                    transition={{ duration: 0.4 }}
                     className="relative rounded-xl overflow-hidden shadow-xl cursor-pointer group"
                   >
                     <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
