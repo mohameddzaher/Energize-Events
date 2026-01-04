@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Projects from "@/components/Projects";
+import ProjectVideos from "@/components/ProjectVideos";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
@@ -41,6 +42,8 @@ export default function ProjectsPage() {
         </section>
 
         <Projects />
+
+        <ProjectVideos />
 
         {/* CTA Section */}
         <section className="relative py-8 sm:py-10 md:py-12 bg-gradient-to-br from-gray-50 to-white">
