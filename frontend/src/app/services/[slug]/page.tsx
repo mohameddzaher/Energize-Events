@@ -25,7 +25,20 @@ import {
 import "swiper/css";
 import "swiper/css/navigation";
 
-const serviceDetails: Record<string, any> = {
+import { IconType } from "react-icons";
+
+const serviceDetails: Record<string, {
+  title: string;
+  category?: string;
+  icon?: IconType;
+  description: string;
+  longDescription: string;
+  features?: string[];
+  images: string[];
+  services: string[];
+  iconColor?: string;
+  bgColor?: string;
+}> = {
   "conferences-seminars": {
     title: "Conferences & Seminars",
     icon: FiCalendar,
@@ -355,9 +368,11 @@ export default function ServiceDetailPage() {
               <div className="flex-1"></div>
             </div>
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 mb-4">
-                <Icon className={`w-8 h-8 ${service.iconColor}`} />
-              </div>
+              {service.icon && (
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 mb-4">
+                  <service.icon className={`w-8 h-8 ${service.iconColor || 'text-[#DC2626]'}`} />
+                </div>
+              )}
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
                 {service.title}
               </h1>
