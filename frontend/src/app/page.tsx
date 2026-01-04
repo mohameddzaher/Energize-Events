@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/Hero";
 import FeaturesSlider from "@/components/FeaturesSlider";
 import MissionVision from "@/components/MissionVision";
