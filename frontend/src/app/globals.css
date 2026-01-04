@@ -117,6 +117,10 @@ body::-webkit-scrollbar {
   padding-bottom: 50px;
 }
 
+.projects-swiper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.05 !important;
+}
+
 .clients-swiper {
   padding: 20px 0;
 }
