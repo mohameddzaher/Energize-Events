@@ -97,10 +97,10 @@ const Footer = () => {
                     const Icon = social.icon;
                     const socialColors: Record<string, string> = {
                       Instagram:
-                        " hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 hover:text-white",
-                      Facebook: "hover:bg-blue-600 hover:text-white",
-                      Twitter: "hover:bg-sky-500 hover:text-white",
-                      LinkedIn: "hover:bg-blue-700 hover:text-white",
+                        "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
+                      Facebook: "hover:bg-blue-600",
+                      Twitter: "hover:bg-sky-500",
+                      LinkedIn: "hover:bg-blue-700",
                     };
                     return (
                       <a

@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiClock, FiSend } from 'react-icons/fi';
-import { FiInstagram, FiFacebook, FiTwitter, FiLinkedin } from 'react-icons/fi';
-import Image from 'next/image';
+import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
+import { FiMail, FiPhone, FiMapPin, FiClock, FiSend } from "react-icons/fi";
+import { FiInstagram, FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
+import Image from "next/image";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -23,46 +23,66 @@ export default function ContactPage() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const contactInfo = [
     {
       icon: FiMail,
-      label: 'Email',
-      value: 'info@energize-sa.com',
-      href: 'mailto:info@energize-sa.com',
+      label: "Email",
+      value: "info@energize-sa.com",
+      href: "mailto:info@energize-sa.com",
     },
     {
       icon: FiPhone,
-      label: 'Phone',
-      value: '+966 53 848 6109',
-      href: 'tel:+966538486109',
+      label: "Phone",
+      value: "+966 53 848 6109",
+      href: "tel:+966538486109",
     },
     {
       icon: FiMapPin,
-      label: 'Location',
-      value: 'Raihanat Al Jazirah, Jeddah',
-      href: 'https://maps.app.goo.gl/QD5oynMuxxkYwqqP8',
+      label: "Location",
+      value: "Raihanat Al Jazirah, Jeddah",
+      href: "https://maps.app.goo.gl/QD5oynMuxxkYwqqP8",
     },
     {
       icon: FiClock,
-      label: 'Working Hours',
-      value: 'Sun - Thu: 9:00 AM - 6:00 PM',
-      href: '#',
+      label: "Working Hours",
+      value: "Sun - Thu: 9:00 AM - 6:00 PM",
+      href: "#",
     },
   ];
 
   const socialLinks = [
-    { icon: FiInstagram, href: 'https://linktr.ee/EnergizeBusKSA', label: 'Instagram' },
-    { icon: FiFacebook, href: 'https://linktr.ee/EnergizeBusKSA', label: 'Facebook' },
-    { icon: FiTwitter, href: 'https://linktr.ee/EnergizeBusKSA', label: 'Twitter' },
-    { icon: FiLinkedin, href: 'https://linktr.ee/EnergizeBusKSA', label: 'LinkedIn' },
+    {
+      icon: FiInstagram,
+      href: "https://linktr.ee/EnergizeBusKSA",
+      label: "Instagram",
+    },
+    {
+      icon: FiFacebook,
+      href: "https://linktr.ee/EnergizeBusKSA",
+      label: "Facebook",
+    },
+    {
+      icon: FiTwitter,
+      href: "https://linktr.ee/EnergizeBusKSA",
+      label: "Twitter",
+    },
+    {
+      icon: FiLinkedin,
+      href: "https://linktr.ee/EnergizeBusKSA",
+      label: "LinkedIn",
+    },
   ];
 
   return (
@@ -89,7 +109,8 @@ export default function ContactPage() {
                 Contact <span className="text-gradient">Us</span>
               </h1>
               <p className="text-sm sm:text-base text-gray-200 max-w-2xl mx-auto">
-                Start your journey with us - Book your appointment for services or consultations
+                Start your journey with us - Book your appointment for services
+                or consultations
               </p>
             </div>
           </div>
@@ -169,7 +190,7 @@ export default function ContactPage() {
                     whileTap={{ scale: 0.95 }}
                     className="w-full bg-[#DC2626] text-white px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-all cursor-pointer"
                   >
-                    <span>{submitted ? 'Message Sent!' : 'Send Message'}</span>
+                    <span>{submitted ? "Message Sent!" : "Send Message"}</span>
                     <FiSend className="w-4 h-4" />
                   </motion.button>
                 </form>
@@ -187,8 +208,14 @@ export default function ContactPage() {
                       <motion.a
                         key={index}
                         href={info.href}
-                        target={info.href.startsWith('http') ? '_blank' : undefined}
-                        rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        target={
+                          info.href.startsWith("http") ? "_blank" : undefined
+                        }
+                        rel={
+                          info.href.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -199,8 +226,12 @@ export default function ContactPage() {
                           <Icon className="w-5 h-5 text-[#DC2626] group-hover:text-white transition-colors" />
                         </div>
                         <div>
-                          <p className="font-semibold text-[#0A0A0A] mb-1 text-xs sm:text-sm">{info.label}</p>
-                          <p className="text-gray-600 text-xs sm:text-sm">{info.value}</p>
+                          <p className="font-semibold text-[#0A0A0A] mb-1 text-xs sm:text-sm">
+                            {info.label}
+                          </p>
+                          <p className="text-gray-600 text-xs sm:text-sm">
+                            {info.value}
+                          </p>
                         </div>
                       </motion.a>
                     );
@@ -209,15 +240,18 @@ export default function ContactPage() {
 
                 {/* Social Links */}
                 <div>
-                  <h3 className="text-base font-bold text-[#0A0A0A] mb-3">Follow Us</h3>
+                  <h3 className="text-base font-bold text-[#0A0A0A] mb-3">
+                    Follow Us
+                  </h3>
                   <div className="flex gap-3">
                     {socialLinks.map((social, index) => {
                       const Icon = social.icon;
                       const socialColors: Record<string, string> = {
-                        Instagram: 'hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500',
-                        Facebook: 'hover:bg-blue-600',
-                        Twitter: 'hover:bg-sky-500',
-                        LinkedIn: 'hover:bg-blue-700',
+                        Instagram:
+                          "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
+                        Facebook: "hover:bg-blue-600",
+                        Twitter: "hover:bg-sky-500",
+                        LinkedIn: "hover:bg-blue-700",
                       };
                       return (
                         <a
@@ -225,16 +259,23 @@ export default function ContactPage() {
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`w-10 h-10 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer ${socialColors[social.label] || 'hover:bg-[#DC2626]'}`}
+                          className={`w-10 h-10 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
+                            socialColors[social.label] || "hover:bg-[#DC2626]"
+                          }`}
                           aria-label={social.label}
                         >
-                          <Icon className="w-5 h-5 text-[#DC2626] transition-colors duration-300 group-hover:text-white" />
+                          <Icon className="w-5 h-5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
                         </a>
                       );
                     })}
                   </div>
                   <p className="mt-3 text-gray-600 text-xs">
-                    <a href="https://linktr.ee/EnergizeBusKSA" target="_blank" rel="noopener noreferrer" className="text-[#DC2626] hover:underline cursor-pointer">
+                    <a
+                      href="https://linktr.ee/EnergizeBusKSA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#DC2626] hover:underline cursor-pointer"
+                    >
                       Visit our Linktree
                     </a>
                   </p>
@@ -273,7 +314,7 @@ export default function ContactPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/20 to-transparent" />
                 </div>
-                
+
                 {/* Map Overlay Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-white/95 backdrop-blur-sm">
                   <div className="flex items-center gap-3">
