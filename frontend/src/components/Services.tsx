@@ -172,15 +172,19 @@ const Services = () => {
             return (
               <Link key={service.title} href={`/services/${service.slug}`}>
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  initial={{ opacity: 0, y: 50, scale: 0.9, rotateX: -10 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{
-                    delay: index * 0.05,
-                    duration: 0.5,
-                    ease: "easeOut",
+                    delay: index * 0.08,
+                    duration: 0.6,
+                    type: "spring",
+                    stiffness: 100,
                   }}
                   whileHover={{
-                    y: -8,
+                    y: -10,
+                    scale: 1.03,
+                    rotateY: 5,
                     boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.15)",
                   }}
                   className="group relative flex flex-col h-full cursor-pointer"
