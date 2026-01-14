@@ -40,7 +40,7 @@ export default function ServicesPage() {
         <section className="relative pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920"
+              src="https://www.aleqt.com/sites/default/files/rbitem/2024/10/29/2424682-1143776767.jpg"
               alt="Services Background"
               fill
               className="object-cover"
@@ -104,7 +104,7 @@ export default function ServicesPage() {
         <section className="relative py-8 sm:py-10 md:py-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1920"
+              src="https://saudiict.com/wp-content/uploads/2022/10/Euromoney-Saudi-Arabia-Conference-2022_ssict_1200_800-1200x640.webp"
               alt="CTA Background"
               fill
               className="object-cover"

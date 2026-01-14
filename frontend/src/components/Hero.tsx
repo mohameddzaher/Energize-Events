@@ -10,9 +10,9 @@ import "swiper/css/effect-fade";
 
 const Hero = () => {
   const heroImages = [
-    "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920",
-    "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920",
-    "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1920",
+    "https://m.eyeofriyadh.com/news_images/2022/12/FMF(2).jpg",
+    "https://assets.asharqbusiness.com/images/articles/1200x630/social-image/0218f5c9-416b-4a26-9b1d-b1255129c775.jpg",
+    "https://www.aleqt.com/sites/default/files/rbitem/2024/10/29/2424682-1143776767.jpg",
   ];
 
   return (

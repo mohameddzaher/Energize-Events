@@ -16,6 +16,38 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'drive.google.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn4.premiumread.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'sonna.so',
+      },
+      {
+        protocol: 'https',
+        hostname: 'saudiict.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.eyeofriyadh.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.al-ain.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.aleqt.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.asharqbusiness.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.independentarabia.com',
+      },
     ],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],

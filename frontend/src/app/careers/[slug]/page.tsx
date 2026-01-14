@@ -162,7 +162,7 @@ export default function JobDetailPage() {
         <section className="relative pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920"
+              src="https://m.eyeofriyadh.com/news_images/2022/12/FMF(2).jpg"
               alt="Job Background"
               fill
               className="object-cover"
@@ -288,7 +288,7 @@ export default function JobDetailPage() {
                   className="inline-flex items-center gap-2 bg-white border-2 border-[#DC2626] text-[#DC2626] px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm hover:bg-[#DC2626] hover:text-white transition-all cursor-pointer mb-6"
                 >
                   <FiMail className="w-4 h-4" />
-                  <span>Send via Email to HR@energize-sa.com</span>
+                  <span>Send via Email to Info@energize-sa.com</span>
                 </motion.a>
               </div>
 

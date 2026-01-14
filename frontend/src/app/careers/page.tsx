@@ -93,7 +93,7 @@ export default function CareersPage() {
         <section className="relative pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920"
+              src="https://m.eyeofriyadh.com/news_images/2022/12/FMF(2).jpg"
               alt="Careers Background"
               fill
               className="object-cover"
@@ -261,7 +261,7 @@ export default function CareersPage() {
         <section className="relative py-6 sm:py-8 md:py-10 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920"
+              src="https://m.eyeofriyadh.com/news_images/2022/12/FMF(2).jpg"
               alt="CTA Background"
               fill
               className="object-cover"

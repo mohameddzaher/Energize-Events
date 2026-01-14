@@ -187,7 +187,7 @@ export default function ProjectDetailPage() {
         <section className="relative pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1920"
+              src="https://assets.asharqbusiness.com/images/articles/1200x630/social-image/0218f5c9-416b-4a26-9b1d-b1255129c775.jpg"
               alt="Project Background"
               fill
               className="object-cover"

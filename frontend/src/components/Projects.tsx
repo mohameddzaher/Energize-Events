@@ -33,7 +33,7 @@ const Projects = () => {
       category: "Conference",
       client: "Tech Corporation",
       image:
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200",
+        "https://cdn.al-ain.com/images/2018/10/23/62-131725-future-investment-initiative-conference-saudi_700x400.jpeg",
       description: "A large-scale technology conference with 5000+ attendees",
       achievements:
         "Successfully managed 5000+ attendees, 50+ speakers, and 100+ sessions",
@@ -44,22 +44,22 @@ const Projects = () => {
       category: "Corporate Event",
       client: "Global Industries",
       image:
-        "https://images.unsplash.com/photo-1593080358201-08e4ff5f93d9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://www.independentarabia.com/sites/default/files/article/mainimage/2019/10/28/116391-1787028584.jpg",
       description: "Elegant corporate gala with live entertainment and awards",
       achievements:
         "Delivered elegant evening with 500+ VIP guests and live performances",
     },
     {
-      slug: "music-festival",
-      title: "Music Festival",
-      category: "Festival",
-      client: "Entertainment Group",
+      slug: "saudi-national-day",
+      title: "Saudi National Day Celebration",
+      category: "Corporate Event",
+      client: "Government Entity",
       image:
-        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200",
+        "https://cdn4.premiumread.com/?url=https://akhbaar24.com/akhbar24/uploads/images/2025/12/07/9500264.jpg&w=1164&q=95&f=webp&t=1",
       description:
-        "Multi-day outdoor music festival with international artists",
+        "Grand celebration of Saudi National Day with traditional performances and cultural activities",
       achievements:
-        "Organized 3-day festival with 20,000+ attendees and 30+ artists",
+        "Organized large-scale event with 10,000+ attendees celebrating Saudi heritage and culture",
     },
     {
       slug: "product-launch",
@@ -67,21 +67,21 @@ const Projects = () => {
       category: "Launch Event",
       client: "Innovation Labs",
       image:
-        "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://saudiict.com/wp-content/uploads/2022/10/Euromoney-Saudi-Arabia-Conference-2022_ssict_1200_800-1200x640.webp",
       description: "Innovative product launch with interactive demonstrations",
       achievements:
         "Generated 1M+ social media impressions and 500+ media coverage",
     },
     {
       slug: "wedding-celebration",
-      title: "Wedding Celebration",
+      title: "Saudi Wedding Celebration",
       category: "Wedding",
       client: "Private Client",
       image:
-        "https://images.unsplash.com/photo-1614487331144-b5b141c11eab?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=1200",
-      description: "Luxury wedding celebration with custom design elements",
+        "https://sonna.so/ar/wp-content/uploads/2025/10/IMG-20251031-WA0039-860x657.jpg",
+      description: "Luxury Saudi wedding celebration with traditional customs and modern elegance",
       achievements:
-        "Created unforgettable experience for 300+ guests with custom design",
+        "Created unforgettable experience for 300+ guests with authentic Saudi traditions",
     },
   ];
 

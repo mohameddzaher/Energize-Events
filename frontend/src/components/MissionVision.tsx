@@ -45,7 +45,7 @@ const MissionVision = () => {
             >
               <div className="relative rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600"
+                  src="https://cdn4.premiumread.com/?url=https://akhbaar24.com/akhbar24/uploads/images/2025/12/07/9500264.jpg&w=1164&q=95&f=webp&t=1"
                   alt="Our Mission"
                   width={450}
                   height={300}
@@ -137,7 +137,7 @@ const MissionVision = () => {
             >
               <div className="relative rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600"
+                  src="https://sonna.so/ar/wp-content/uploads/2025/10/IMG-20251031-WA0039-860x657.jpg"
                   alt="Our Vision"
                   width={450}
                   height={300}
