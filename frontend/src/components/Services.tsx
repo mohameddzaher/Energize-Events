@@ -116,15 +116,15 @@ const Services = () => {
       iconColor: "text-red-700",
       bgColor: "bg-red-50",
     },
-    {
-      icon: FiStar,
-      title: "Special Events",
-      slug: "special-events",
-      description:
-        "We transform unique ideas into exceptional experiences through events designed specifically to embody your vision.",
-      iconColor: "text-red-700",
-      bgColor: "bg-red-50",
-    },
+    // {
+    //   icon: FiStar,
+    //   title: "Special Events",
+    //   slug: "special-events",
+    //   description:
+    //     "We transform unique ideas into exceptional experiences through events designed specifically to embody your vision.",
+    //   iconColor: "text-red-700",
+    //   bgColor: "bg-red-50",
+    // },
   ];
 
   return (

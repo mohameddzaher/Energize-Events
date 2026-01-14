@@ -115,7 +115,7 @@ export default function ContactPage() {
         <section className="relative pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1478146896981-7e959b4e4a0a?w=1920"
+              src="https://www.independentarabia.com/sites/default/files/article/mainimage/2019/10/28/116391-1787028584.jpg"
               alt="Contact Background"
               fill
               className="object-cover"

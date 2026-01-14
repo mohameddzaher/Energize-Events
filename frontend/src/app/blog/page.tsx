@@ -43,7 +43,7 @@ export default function BlogPage() {
         <section className="relative pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920"
+              src="https://cdn.al-ain.com/images/2018/10/23/62-131725-future-investment-initiative-conference-saudi_700x400.jpeg"
               alt="Blog Background"
               fill
               className="object-cover"

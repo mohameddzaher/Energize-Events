@@ -353,7 +353,7 @@ export default function ServiceDetailPage() {
         <section className="relative pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920"
+              src="https://www.aleqt.com/sites/default/files/rbitem/2024/10/29/2424682-1143776767.jpg"
               alt="Service Background"
               fill
               className="object-cover"

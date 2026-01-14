@@ -130,7 +130,7 @@ const Founder = () => {
         >
           <div className="text-center p-3 sm:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <div className="text-lg sm:text-xl font-bold text-gray-900">
-              25+
+              29+
             </div>
             <div className="text-xs text-gray-600 mt-1">Years</div>
           </div>
@@ -140,7 +140,7 @@ const Founder = () => {
           </div>
           <div className="text-center p-3 sm:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <div className="text-lg sm:text-xl font-bold text-gray-900">
-              750+
+              861+
             </div>
             <div className="text-xs text-gray-600 mt-1">Team</div>
           </div>
