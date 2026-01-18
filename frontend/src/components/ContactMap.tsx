@@ -17,7 +17,7 @@ const ContactMap = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const googleMapsUrl = "https://maps.app.goo.gl/QD5oynMuxxkYwqqP8";
+  const googleMapsUrl = "https://maps.app.goo.gl/dCjJ52mncRA9pWq7A";
   const locationAddress = "Raihanat Al Jazirah, Al Faisaliyyah, Jeddah 23442";
 
   const contactInfo = [

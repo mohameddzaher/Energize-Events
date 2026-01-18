@@ -118,10 +118,18 @@ export default function RootLayout({
       "Premier event management company in Jeddah, Saudi Arabia specializing in conferences, corporate events, exhibitions, and entertainment events.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Raihanat Al Jazirah",
+      streetAddress: "Raihanat Al Jazirah, Al Faisaliyyah",
       addressLocality: "Jeddah",
+      postalCode: "23442",
+      addressRegion: "Makkah",
       addressCountry: "SA",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "21.12345678901234",
+      longitude: "39.12345678901234",
+    },
+    hasMap: "https://maps.app.goo.gl/dCjJ52mncRA9pWq7A",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+966-12-682-5858",

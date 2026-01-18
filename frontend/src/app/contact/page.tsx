@@ -54,7 +54,7 @@ export default function ContactPage() {
       icon: FiMapPin,
       label: "Location",
       value: "Raihanat Al Jazirah, Jeddah",
-      href: "https://maps.app.goo.gl/QD5oynMuxxkYwqqP8",
+      href: "https://maps.app.goo.gl/dCjJ52mncRA9pWq7A",
     },
     {
       icon: FiClock,
@@ -324,52 +324,39 @@ export default function ContactPage() {
                   Visit us at our office in Jeddah
                 </p>
               </div>
-              <a
-                href="https://maps.app.goo.gl/QD5oynMuxxkYwqqP8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300 group cursor-pointer mb-4"
-              >
-                <div className="absolute inset-0">
-                  <Image
-                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200"
-                    alt="Office Location"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/20 to-transparent" />
-                </div>
-
-                {/* Map Overlay Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-white/95 backdrop-blur-sm">
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-xl border border-gray-200 mb-4">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.1234567890123!2d39.12345678901234!3d21.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDA3JzI0LjQiTiAzOcKwMDcjMjQuNCJF!5e0!3m2!1sen!2ssa!4v1234567890123!5m2!1sen!2ssa"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                  title="Energize Events - Our Location in Jeddah, Saudi Arabia"
+                />
+                <a
+                  href="https://maps.app.goo.gl/dCjJ52mncRA9pWq7A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 bg-white/95 backdrop-blur-sm hover:bg-white transition-all duration-300 cursor-pointer"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-[#DC2626]/10 flex items-center justify-center flex-shrink-0">
                       <FiMapPin className="w-5 h-5 text-[#DC2626]" />
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900 mb-0.5">
-                        Our Location
+                        Energize Events - Our Location
                       </h3>
                       <p className="text-xs text-gray-600">
                         Raihanat Al Jazirah, Al Faisaliyyah, Jeddah 23442
                       </p>
                     </div>
                   </div>
-                </div>
-
-                {/* Map Pin Marker */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    className="w-8 h-8 bg-[#DC2626] rounded-full flex items-center justify-center shadow-lg"
-                  >
-                    <div className="w-3 h-3 bg-white rounded-full" />
-                  </motion.div>
-                </div>
-              </a>
+                </a>
+              </div>
               <p className="text-center text-xs sm:text-sm text-gray-600">
                 We have multiple branches across multiple countries
               </p>

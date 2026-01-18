@@ -235,7 +235,7 @@ const Footer = () => {
                 <li className="flex items-start space-x-2 justify-center">
                   <FiMapPin className="w-4 h-4 text-[#DC2626] mt-0.5 flex-shrink-0" />
                   <a
-                    href="https://maps.app.goo.gl/QD5oynMuxxkYwqqP8"
+                    href="https://maps.app.goo.gl/dCjJ52mncRA9pWq7A"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-[#DC2626] transition-colors text-xs sm:text-sm cursor-pointer"
