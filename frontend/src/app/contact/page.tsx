@@ -262,34 +262,67 @@ export default function ContactPage() {
                   <h3 className="text-base font-bold text-[#0A0A0A] mb-3">
                     Follow Us
                   </h3>
-                  <div className="grid grid-cols-4 gap-3 max-w-xs">
-                    {socialLinks.map((social, index) => {
-                      const Icon = social.icon;
-                      const socialColors: Record<string, string> = {
-                        Instagram:
-                          "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
-                        Facebook: "hover:bg-blue-600",
-                        X: "hover:bg-black",
-                        LinkedIn: "hover:bg-blue-700",
-                        YouTube: "hover:bg-red-600",
-                        TikTok: "hover:bg-black",
-                        Snapchat: "hover:bg-yellow-400",
-                      };
-                      return (
-                        <a
-                          key={index}
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`w-8 h-8 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
-                            socialColors[social.label] || "hover:bg-[#DC2626]"
-                          }`}
-                          aria-label={social.label}
-                        >
-                          <Icon className="w-3.5 h-3.5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
-                        </a>
-                      );
-                    })}
+                  <div className="flex flex-col items-center gap-3">
+                    {/* First row: 4 icons */}
+                    <div className="flex justify-center items-center gap-3">
+                      {socialLinks.slice(0, 4).map((social, index) => {
+                        const Icon = social.icon;
+                        const socialColors: Record<string, string> = {
+                          Instagram:
+                            "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
+                          Facebook: "hover:bg-blue-600",
+                          X: "hover:bg-black",
+                          LinkedIn: "hover:bg-blue-700",
+                          YouTube: "hover:bg-red-600",
+                          TikTok: "hover:bg-black",
+                          Snapchat: "hover:bg-yellow-400",
+                        };
+                        return (
+                          <a
+                            key={index}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`w-8 h-8 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
+                              socialColors[social.label] || "hover:bg-[#DC2626]"
+                            }`}
+                            aria-label={social.label}
+                          >
+                            <Icon className="w-3.5 h-3.5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
+                          </a>
+                        );
+                      })}
+                    </div>
+                    {/* Second row: 3 icons centered */}
+                    <div className="flex justify-center items-center gap-3">
+                      {socialLinks.slice(4, 7).map((social, index) => {
+                        const Icon = social.icon;
+                        const socialColors: Record<string, string> = {
+                          Instagram:
+                            "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
+                          Facebook: "hover:bg-blue-600",
+                          X: "hover:bg-black",
+                          LinkedIn: "hover:bg-blue-700",
+                          YouTube: "hover:bg-red-600",
+                          TikTok: "hover:bg-black",
+                          Snapchat: "hover:bg-yellow-400",
+                        };
+                        return (
+                          <a
+                            key={index + 4}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`w-8 h-8 rounded-full bg-[#DC2626]/10 flex items-center justify-center transition-colors duration-300 cursor-pointer group ${
+                              socialColors[social.label] || "hover:bg-[#DC2626]"
+                            }`}
+                            aria-label={social.label}
+                          >
+                            <Icon className="w-3.5 h-3.5 text-[#DC2626] group-hover:text-white transition-colors duration-300" />
+                          </a>
+                        );
+                      })}
+                    </div>
                   </div>
                   <p className="mt-3 text-gray-600 text-xs">
                     <a
