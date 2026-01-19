@@ -184,7 +184,7 @@ const serviceDetails: Record<
       "Installation and teardown",
     ],
     images: [
-      "https://images.unsplash.com/photo-1478146896981-7e959b4e4a0a?w=1200",
+      "https://images.unsplash.com/photo-1558625332-9a35ee767f24?q=80&w=1324&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200",
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200",
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200",
@@ -235,7 +235,7 @@ const serviceDetails: Record<
     ],
     images: [
       "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200",
-      "https://images.unsplash.com/photo-1478146896981-7e959b4e4a0a?w=1200",
+      "https://images.unsplash.com/photo-1730134322176-862f1cf9bc9f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200",
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200",
     ],
