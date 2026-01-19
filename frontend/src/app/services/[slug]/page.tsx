@@ -364,10 +364,6 @@ export default function ServiceDetailPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/80 via-[#0A0A0A]/70 to-[#0A0A0A]/80" />
           </div>
           <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-            <div className="flex items-start justify-between mb-6">
-              <BackButton href="/services" />
-              <div className="flex-1"></div>
-            </div>
             <div className="text-center mb-8">
               {service.icon && (
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 mb-4">
@@ -385,6 +381,13 @@ export default function ServiceDetailPage() {
                 {service.description}
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Back Button */}
+        <section className="relative py-4 sm:py-6 bg-white">
+          <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+            <BackButton href="/services" />
           </div>
         </section>
 

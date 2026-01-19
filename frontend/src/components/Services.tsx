@@ -165,7 +165,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* Services Grid - Fixed columns to ensure equal cards per row */}
+        {/* Services Grid - Fixed columns to ensure equal cards per row (10 cards = 2 rows of 5 or 5 rows of 2) */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-5 gap-3 sm:gap-4">
           {services.map((service, index) => {
             const Icon = service.icon;
