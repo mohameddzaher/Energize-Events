@@ -365,15 +365,6 @@ export default function ServiceDetailPage() {
           </div>
           <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="text-center mb-8">
-              {service.icon && (
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-[#DC2626]/10 to-red-600/10 mb-4">
-                  <service.icon
-                    className={`w-8 h-8 ${
-                      service.iconColor || "text-[#DC2626]"
-                    }`}
-                  />
-                </div>
-              )}
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
                 {service.title}
               </h1>
