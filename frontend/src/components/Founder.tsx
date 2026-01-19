@@ -126,7 +126,7 @@ const Founder = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-sm mx-auto"
+          className="flex justify-center items-center gap-3 sm:gap-4 mb-6 sm:mb-8"
         >
           <div className="text-center p-3 sm:p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <div className="text-lg sm:text-xl font-bold text-gray-900">
