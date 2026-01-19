@@ -5,7 +5,8 @@ import Footer from '@/components/Footer';
 import Clients from '@/components/Clients';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiUsers, FiCalendar, FiAward } from 'react-icons/fi';
+import { FaHandshake } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function ClientsPage() {
@@ -67,20 +68,25 @@ export default function ClientsPage() {
         <Clients />
 
         {/* Partnership Stats Section */}
-        <section className="relative py-8 sm:py-10 md:py-12 bg-white">
-          <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <section className="relative py-10 sm:py-12 md:py-14 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#DC2626] to-transparent rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-l from-blue-500 to-transparent rounded-full blur-3xl" />
+          </div>
+          <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-6 sm:mb-8">
+              <div className="text-center mb-8 sm:mb-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DC2626]/10 rounded-full mb-3">
                   <div className="w-1.5 h-1.5 bg-[#DC2626] rounded-full animate-pulse" />
                   <span className="text-[#DC2626] font-medium text-xs">
                     OUR PARTNERSHIPS
                   </span>
                 </div>
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0A0A0A] mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A0A0A] mb-3">
                   Building Lasting Relationships
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-600">
+                <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#DC2626] to-transparent mx-auto mb-3" />
+                <p className="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto">
                   Trusted by industry leaders across various sectors
                 </p>
               </div>
@@ -89,41 +95,55 @@ export default function ClientsPage() {
                   {
                     number: "100+",
                     label: "Satisfied Clients",
-                    icon: "👥",
+                    icon: FiUsers,
+                    color: "from-blue-500/10 to-blue-600/10",
+                    iconColor: "text-blue-600",
                   },
                   {
                     number: "500+",
                     label: "Events Delivered",
-                    icon: "🎉",
+                    icon: FiCalendar,
+                    color: "from-green-500/10 to-green-600/10",
+                    iconColor: "text-green-600",
                   },
                   {
                     number: "50+",
                     label: "Industry Partners",
-                    icon: "🤝",
+                    icon: FaHandshake,
+                    color: "from-purple-500/10 to-purple-600/10",
+                    iconColor: "text-purple-600",
                   },
                   {
                     number: "10+",
                     label: "Years of Excellence",
-                    icon: "⭐",
+                    icon: FiAward,
+                    color: "from-[#DC2626]/10 to-red-600/10",
+                    iconColor: "text-[#DC2626]",
                   },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-100 hover:border-[#DC2626]/30 hover:shadow-lg transition-all text-center"
-                  >
-                    <div className="text-3xl mb-3">{stat.icon}</div>
-                    <div className="text-2xl sm:text-3xl font-bold text-[#DC2626] mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-xs sm:text-sm text-gray-600 font-medium">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
+                ].map((stat, index) => {
+                  const Icon = stat.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ y: -5, scale: 1.02 }}
+                      className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 hover:border-[#DC2626]/30 hover:shadow-xl transition-all text-center group"
+                    >
+                      <div className={`w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                        <Icon className={`w-7 h-7 ${stat.iconColor}`} />
+                      </div>
+                      <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-2">
+                        {stat.number}
+                      </div>
+                      <div className="text-xs sm:text-sm text-gray-600 font-medium">
+                        {stat.label}
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </div>
