@@ -22,7 +22,7 @@ const Founder = () => {
     {
       icon: FaCrown,
       title: "Strategic Visionary",
-      description: "25+ years shaping industry landscapes",
+      description: "26+ years shaping industry landscapes",
     },
     {
       icon: FaRocket,
@@ -164,7 +164,7 @@ const Founder = () => {
 
             <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-5 sm:p-6 shadow-sm">
               <p className="text-gray-700 text-sm leading-relaxed text-center">
-                With over 25 years of experience, Mr. Dulaim Al Nasher has
+                With over 29 years of experience, Mr. Dulaim Al Nasher has
                 established himself as a visionary leader in the Saudi business
                 landscape. As the founder and chairman of Energize Global Group,
                 he has successfully launched and scaled multiple ventures,

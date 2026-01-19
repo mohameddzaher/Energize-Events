@@ -11,7 +11,8 @@ import {
   FiLinkedin,
 } from "react-icons/fi";
 import { FaYoutube, FaTiktok } from "react-icons/fa";
-import { BsSnapchat, BsThreads } from "react-icons/bs";
+import { FaX } from "react-icons/fa6";
+import { BsSnapchat } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,9 +43,9 @@ const Footer = () => {
       label: "Instagram",
     },
     {
-      icon: FiTwitter,
+      icon: FaX,
       href: "https://x.com/EnergizeBusKSA",
-      label: "Twitter",
+      label: "X",
     },
     {
       icon: FiFacebook,
@@ -65,11 +66,6 @@ const Footer = () => {
       icon: BsSnapchat,
       href: "https://www.snapchat.com/add/energizebusksa",
       label: "Snapchat",
-    },
-    {
-      icon: BsThreads,
-      href: "https://www.threads.net/@energizebusksa",
-      label: "Threads",
     },
   ];
 
@@ -112,12 +108,11 @@ const Footer = () => {
                       Instagram:
                         "hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500",
                       Facebook: "hover:bg-blue-600",
-                      Twitter: "hover:bg-sky-500",
+                      X: "hover:bg-black",
                       LinkedIn: "hover:bg-blue-700",
                       YouTube: "hover:bg-red-600",
                       TikTok: "hover:bg-black",
                       Snapchat: "hover:bg-yellow-400",
-                      Threads: "hover:bg-black",
                     };
                     return (
                       <a
