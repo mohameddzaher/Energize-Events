@@ -6,8 +6,7 @@ import Clients from '@/components/Clients';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FiArrowRight } from 'react-icons/fi';
-import { HiLightBulb, HiSparkles, HiTrendingUp } from 'react-icons/hi';
-import { MdAutoAwesome, MdWorkspacePremium } from 'react-icons/md';
+import { FaLightbulb, FaAward, FaRocket, FaChartLine } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function ClientsPage() {
@@ -92,7 +91,7 @@ export default function ClientsPage() {
                   {
                     title: "Innovation",
                     description: "Cutting-edge solutions and creative approaches",
-                    icon: HiLightBulb,
+                    icon: FaLightbulb,
                     color: "text-yellow-500",
                     bgColor: "bg-yellow-50",
                     borderColor: "border-yellow-200",
@@ -100,7 +99,7 @@ export default function ClientsPage() {
                   {
                     title: "Excellence",
                     description: "Uncompromising quality in every project",
-                    icon: MdWorkspacePremium,
+                    icon: FaAward,
                     color: "text-[#DC2626]",
                     bgColor: "bg-red-50",
                     borderColor: "border-red-200",
@@ -108,7 +107,7 @@ export default function ClientsPage() {
                   {
                     title: "Creativity",
                     description: "Creative solutions that stand out",
-                    icon: HiSparkles,
+                    icon: FaRocket,
                     color: "text-purple-500",
                     bgColor: "bg-purple-50",
                     borderColor: "border-purple-200",
@@ -116,7 +115,7 @@ export default function ClientsPage() {
                   {
                     title: "Growth",
                     description: "Driving success and measurable results",
-                    icon: HiTrendingUp,
+                    icon: FaChartLine,
                     color: "text-green-500",
                     bgColor: "bg-green-50",
                     borderColor: "border-green-200",
@@ -131,22 +130,22 @@ export default function ClientsPage() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1, duration: 0.4 }}
                       whileHover={{ y: -4, scale: 1.02 }}
-                      className="relative group"
+                      className="relative group h-full"
                     >
-                      <div className={`relative bg-white rounded-lg p-4 border ${item.borderColor} hover:border-[#DC2626]/40 transition-all duration-300 shadow-sm hover:shadow-md overflow-hidden`}>
-                        <div className="relative z-10">
+                      <div className={`relative bg-white rounded-lg p-4 border ${item.borderColor} hover:border-[#DC2626]/40 transition-all duration-300 shadow-sm hover:shadow-md overflow-hidden h-full flex flex-col`}>
+                        <div className="relative z-10 flex flex-col h-full">
                           {/* Icon */}
-                          <div className={`w-10 h-10 rounded-lg ${item.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                          <div className={`w-10 h-10 rounded-lg ${item.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                             <Icon className={`w-5 h-5 ${item.color}`} />
                           </div>
 
                           {/* Title */}
-                          <h3 className="text-xs sm:text-sm font-bold text-[#0A0A0A] mb-1.5">
+                          <h3 className="text-xs sm:text-sm font-bold text-[#0A0A0A] mb-1.5 flex-shrink-0">
                             {item.title}
                           </h3>
 
                           {/* Description */}
-                          <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed">
+                          <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed flex-grow">
                             {item.description}
                           </p>
                         </div>
