@@ -6,7 +6,7 @@ import Clients from '@/components/Clients';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FiArrowRight } from 'react-icons/fi';
-import { FaLightbulb, FaAward, FaRocket, FaChartLine } from 'react-icons/fa';
+import { FaGem, FaTrophy, FaMagic, FaChartBar } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function ClientsPage() {
@@ -91,34 +91,22 @@ export default function ClientsPage() {
                   {
                     title: "Innovation",
                     description: "Cutting-edge solutions and creative approaches",
-                    icon: FaLightbulb,
-                    color: "text-yellow-500",
-                    bgColor: "bg-yellow-50",
-                    borderColor: "border-yellow-200",
+                    icon: FaGem,
                   },
                   {
                     title: "Excellence",
                     description: "Uncompromising quality in every project",
-                    icon: FaAward,
-                    color: "text-[#DC2626]",
-                    bgColor: "bg-red-50",
-                    borderColor: "border-red-200",
+                    icon: FaTrophy,
                   },
                   {
                     title: "Creativity",
                     description: "Creative solutions that stand out",
-                    icon: FaRocket,
-                    color: "text-purple-500",
-                    bgColor: "bg-purple-50",
-                    borderColor: "border-purple-200",
+                    icon: FaMagic,
                   },
                   {
                     title: "Growth",
                     description: "Driving success and measurable results",
-                    icon: FaChartLine,
-                    color: "text-green-500",
-                    bgColor: "bg-green-50",
-                    borderColor: "border-green-200",
+                    icon: FaChartBar,
                   },
                 ].map((item, index) => {
                   const Icon = item.icon;
@@ -132,11 +120,11 @@ export default function ClientsPage() {
                       whileHover={{ y: -4, scale: 1.02 }}
                       className="relative group h-full"
                     >
-                      <div className={`relative bg-white rounded-lg p-4 border ${item.borderColor} hover:border-[#DC2626]/40 transition-all duration-300 shadow-sm hover:shadow-md overflow-hidden h-full flex flex-col`}>
+                      <div className="relative bg-white rounded-lg p-4 border border-red-200 hover:border-[#DC2626]/40 transition-all duration-300 shadow-sm hover:shadow-md overflow-hidden h-full flex flex-col">
                         <div className="relative z-10 flex flex-col h-full">
                           {/* Icon */}
-                          <div className={`w-10 h-10 rounded-lg ${item.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                            <Icon className={`w-5 h-5 ${item.color}`} />
+                          <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                            <Icon className="w-5 h-5 text-[#DC2626]" />
                           </div>
 
                           {/* Title */}
