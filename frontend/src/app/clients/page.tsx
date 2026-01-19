@@ -5,8 +5,7 @@ import Footer from '@/components/Footer';
 import Clients from '@/components/Clients';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FiArrowRight, FiUsers, FiCalendar, FiAward } from 'react-icons/fi';
-import { FaHandshake } from 'react-icons/fa';
+import { FiArrowRight, FiCheckCircle, FiTrendingUp, FiStar } from 'react-icons/fi';
 import Link from 'next/link';
 
 export default function ClientsPage() {
@@ -67,84 +66,126 @@ export default function ClientsPage() {
 
         <Clients />
 
-        {/* Partnership Stats Section */}
-        <section className="relative py-10 sm:py-12 md:py-14 bg-gradient-to-br from-gray-50 via-white to-gray-50 overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#DC2626] to-transparent rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-l from-blue-500 to-transparent rounded-full blur-3xl" />
-          </div>
+        {/* Success Stories Section */}
+        <section className="relative py-10 sm:py-12 md:py-14 bg-white overflow-hidden">
           <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-7xl mx-auto">
               <div className="text-center mb-8 sm:mb-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DC2626]/10 rounded-full mb-3">
                   <div className="w-1.5 h-1.5 bg-[#DC2626] rounded-full animate-pulse" />
                   <span className="text-[#DC2626] font-medium text-xs">
-                    OUR PARTNERSHIPS
+                    SUCCESS STORIES
                   </span>
                 </div>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A0A0A] mb-3">
-                  Building Lasting Relationships
+                  The Impact We Create
                 </h2>
-                <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#DC2626] to-transparent mx-auto mb-3" />
                 <p className="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto">
-                  Trusted by industry leaders across various sectors
+                  Real results from real partnerships - See how we've transformed events into unforgettable experiences
                 </p>
               </div>
-              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {[
                   {
-                    number: "100+",
-                    label: "Satisfied Clients",
-                    icon: FiUsers,
-                    color: "from-blue-500/10 to-blue-600/10",
-                    iconColor: "text-blue-600",
+                    title: "Corporate Excellence",
+                    description: "Delivered 200+ corporate events for leading organizations, achieving 98% client satisfaction rate",
+                    metric: "200+",
+                    metricLabel: "Corporate Events",
+                    icon: FiCheckCircle,
+                    gradient: "from-blue-500 to-blue-600",
                   },
                   {
-                    number: "500+",
-                    label: "Events Delivered",
-                    icon: FiCalendar,
-                    color: "from-green-500/10 to-green-600/10",
-                    iconColor: "text-green-600",
+                    title: "Government Partnerships",
+                    description: "Successfully managed high-profile government conferences and exhibitions across the Kingdom",
+                    metric: "50+",
+                    metricLabel: "Government Events",
+                    icon: FiTrendingUp,
+                    gradient: "from-green-500 to-green-600",
                   },
                   {
-                    number: "50+",
-                    label: "Industry Partners",
-                    icon: FaHandshake,
-                    color: "from-purple-500/10 to-purple-600/10",
-                    iconColor: "text-purple-600",
+                    title: "International Recognition",
+                    description: "Award-winning event management services recognized by industry leaders and media",
+                    metric: "10+",
+                    metricLabel: "Awards & Recognition",
+                    icon: FiStar,
+                    gradient: "from-[#DC2626] to-red-600",
                   },
-                  {
-                    number: "10+",
-                    label: "Years of Excellence",
-                    icon: FiAward,
-                    color: "from-[#DC2626]/10 to-red-600/10",
-                    iconColor: "text-[#DC2626]",
-                  },
-                ].map((stat, index) => {
-                  const Icon = stat.icon;
+                ].map((story, index) => {
+                  const Icon = story.icon;
                   return (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ y: -5, scale: 1.02 }}
-                      className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 hover:border-[#DC2626]/30 hover:shadow-xl transition-all text-center group"
+                      transition={{ delay: index * 0.15, duration: 0.6 }}
+                      whileHover={{ y: -8, scale: 1.02 }}
+                      className="relative group"
                     >
-                      <div className={`w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className={`w-7 h-7 ${stat.iconColor}`} />
-                      </div>
-                      <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] mb-2">
-                        {stat.number}
-                      </div>
-                      <div className="text-xs sm:text-sm text-gray-600 font-medium">
-                        {stat.label}
+                      <div className="relative bg-white rounded-2xl p-6 sm:p-8 border-2 border-gray-100 hover:border-[#DC2626]/30 transition-all duration-300 shadow-sm hover:shadow-2xl overflow-hidden">
+                        {/* Gradient Background Effect */}
+                        <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${story.gradient} opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity duration-300`} />
+                        
+                        <div className="relative z-10">
+                          {/* Icon */}
+                          <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${story.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                            <Icon className="w-8 h-8 text-white" />
+                          </div>
+
+                          {/* Metric */}
+                          <div className="mb-3">
+                            <div className="text-3xl sm:text-4xl font-bold text-[#0A0A0A] mb-1">
+                              {story.metric}
+                            </div>
+                            <div className="text-xs sm:text-sm text-gray-500 font-medium">
+                              {story.metricLabel}
+                            </div>
+                          </div>
+
+                          {/* Title */}
+                          <h3 className="text-base sm:text-lg font-bold text-[#0A0A0A] mb-3">
+                            {story.title}
+                          </h3>
+
+                          {/* Description */}
+                          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            {story.description}
+                          </p>
+                        </div>
                       </div>
                     </motion.div>
                   );
                 })}
               </div>
+
+              {/* Bottom Stats Bar */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="mt-10 sm:mt-12 bg-gradient-to-r from-[#DC2626]/5 via-red-600/5 to-[#DC2626]/5 rounded-2xl p-6 sm:p-8 border border-[#DC2626]/10"
+              >
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#DC2626] mb-1">100+</div>
+                    <div className="text-xs text-gray-600">Satisfied Clients</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#DC2626] mb-1">500+</div>
+                    <div className="text-xs text-gray-600">Events Delivered</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#DC2626] mb-1">50+</div>
+                    <div className="text-xs text-gray-600">Industry Partners</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#DC2626] mb-1">10+</div>
+                    <div className="text-xs text-gray-600">Years of Excellence</div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
