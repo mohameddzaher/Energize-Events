@@ -159,7 +159,7 @@ const serviceDetails: Record<
       "Equipment rental",
     ],
     images: [
-      "https://images.unsplash.com/photo-1478146896981-7e959b4e4a0a?w=1200",
+      "https://images.unsplash.com/photo-1475552013742-eb6eb701988c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200",
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200",
       "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200",
