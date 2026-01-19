@@ -211,6 +211,33 @@ export default function CareersPage() {
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0A0A0A] mb-5 sm:mb-6 text-center">
                 Open Positions
               </h2>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-xl p-8 sm:p-10 border border-gray-200 text-center"
+              >
+                <div className="w-16 h-16 bg-[#DC2626]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FiBriefcase className="w-8 h-8 text-[#DC2626]" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-[#0A0A0A] mb-3">
+                  No Positions Available at the Moment
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-md mx-auto">
+                  We currently don&apos;t have any open positions, but we&apos;re always looking for talented individuals to join our team. Feel free to reach out to us via email.
+                </p>
+                <a
+                  href="mailto:info@energize-sa.com"
+                  className="inline-flex items-center gap-2 bg-[#DC2626] text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-red-700 transition-all cursor-pointer"
+                >
+                  <span>Contact Us at info@energize-sa.com</span>
+                  <FiArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+
+              {/* Commented out job listings - uncomment when positions are available */}
+              {/* 
               <div className="space-y-4">
                 {positions.map((position, index) => (
                   <Link key={position.id} href={`/careers/${position.id}`}>
@@ -253,6 +280,7 @@ export default function CareersPage() {
                   </Link>
                 ))}
               </div>
+              */}
             </div>
           </div>
         </section>
