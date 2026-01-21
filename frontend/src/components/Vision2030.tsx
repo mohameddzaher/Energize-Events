@@ -18,7 +18,7 @@ const Vision2030 = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920"
+          src="https://cdn.al-ain.com/images/2018/10/23/62-131725-future-investment-initiative-conference-saudi_700x400.jpeg"
           alt="Saudi Arabia Background"
           fill
           className="object-cover"

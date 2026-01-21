@@ -16,7 +16,7 @@ const MissionVision = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920"
+          src="https://m.eyeofriyadh.com/news_images/2022/12/FMF(2).jpg"
           alt="Mission Vision Background"
           fill
           className="object-cover"

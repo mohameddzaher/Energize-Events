@@ -365,7 +365,7 @@ export default function ContactPage() {
               >
                 <div className="absolute inset-0">
                   <Image
-                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200"
+                    src="https://www.aleqt.com/sites/default/files/rbitem/2024/10/29/2424682-1143776767.jpg"
                     alt="Map Location"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

@@ -6,47 +6,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
+        hostname: '**',
       },
       {
-        protocol: 'https',
-        hostname: 'via.placeholder.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'drive.google.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn4.premiumread.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'sonna.so',
-      },
-      {
-        protocol: 'https',
-        hostname: 'saudiict.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'm.eyeofriyadh.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.al-ain.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.aleqt.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'assets.asharqbusiness.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.independentarabia.com',
+        protocol: 'http',
+        hostname: '**',
       },
     ],
     formats: ['image/avif', 'image/webp'],

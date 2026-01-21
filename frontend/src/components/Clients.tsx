@@ -48,7 +48,7 @@ const Clients = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920"
+          src="https://assets.asharqbusiness.com/images/articles/1200x630/social-image/0218f5c9-416b-4a26-9b1d-b1255129c775.jpg"
           alt="Clients Background"
           fill
           className="object-cover"

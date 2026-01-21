@@ -29,7 +29,7 @@ const Newsletter = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920"
+          src="https://cdn.al-ain.com/images/2018/10/23/62-131725-future-investment-initiative-conference-saudi_700x400.jpeg"
           alt="Newsletter Background"
           fill
           className="object-cover"

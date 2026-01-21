@@ -12,7 +12,7 @@ export default function BlogPage() {
     {
       title: '10 Tips for Planning a Successful Corporate Event',
       excerpt: 'Discover the essential strategies for organizing memorable corporate events that leave a lasting impression...',
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800',
+      image: 'https://cdn.al-ain.com/images/2018/10/23/62-131725-future-investment-initiative-conference-saudi_700x400.jpeg',
       date: 'March 15, 2024',
       author: 'Energize Team',
       category: 'Corporate Events',
@@ -20,7 +20,7 @@ export default function BlogPage() {
     {
       title: 'The Future of Event Technology',
       excerpt: 'Explore how cutting-edge technology is transforming the events industry and creating new possibilities...',
-      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800',
+      image: 'https://assets.asharqbusiness.com/images/articles/1200x630/social-image/0218f5c9-416b-4a26-9b1d-b1255129c775.jpg',
       date: 'March 10, 2024',
       author: 'Energize Team',
       category: 'Technology',
@@ -28,7 +28,7 @@ export default function BlogPage() {
     {
       title: 'Creating Memorable Brand Experiences',
       excerpt: 'Learn how to design brand activations that engage audiences and create meaningful connections...',
-      image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800',
+      image: 'https://www.aleqt.com/sites/default/files/rbitem/2024/10/29/2424682-1143776767.jpg',
       date: 'March 5, 2024',
       author: 'Energize Team',
       category: 'Brand Activation',
